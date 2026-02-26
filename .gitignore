@@ -4,6 +4,3 @@
 
 # Ignore the empty index.php file in wp-content
 /index.php
-
-# Ignore the empty index.php file in wp-content/plugins
-/plugins/index.php
