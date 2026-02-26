@@ -1,0 +1,791 @@
+// Partials
+@use 'variables';
+
+
+/* -------------------- Fonts -------------------- */
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/nunito-variablefont-weight.ttf');
+}
+
+
+/* -------------------- Global Styles -------------------- */
+* {
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+// Push content down so its not hidden beneath sticky header
+header {
+    height: 76px;
+}
+
+// Make sure footer is always positioned below initial screen position
+main {
+    min-height: 95vh;
+}
+
+// Skip link
+.skip-link {
+    position: fixed;
+    top: 0;
+    left: 5rem;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index:99;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+
+.skip-link:focus {  
+    width: auto;
+    height: auto;
+    color: variables.$red !important;
+    transform: translateY(0%);
+}
+
+// Scroll to top button
+#scroll-to-top-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: 1px solid variables.$black;
+    outline: none;
+    background-color: variables.$primary;
+    color: variables.$black;
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+
+    &:hover {
+        background-color: variables.$secondary;
+    }
+
+    &:active {
+        transform: translateY(5px);
+    }
+
+    &::after {
+        content: ' Back To Top';
+    }
+}
+@media screen and (max-width: 766px) {
+    #scroll-to-top-button {
+        &::after {
+            content: '';
+        }
+    }
+}
+
+// WordPress Pagination
+.pagination {
+    margin-bottom: 1rem;
+    
+    .page-numbers {
+        padding: 0.5rem;
+        border: 1px solid #000000;
+        border-radius: 4px;
+        color: variables.$black;
+        
+        &:hover {
+            color: variables.$blue;
+        }
+    }
+    
+    .current {
+        &:hover {
+            color: variables.$black;
+        }
+    }
+}
+
+// Chatbox Styles
+.chatbox-container {
+    background: variables.$gray;
+    border-radius: 0rem 0rem 0.5rem 0.5rem;
+    padding: 1rem;
+    height: 38rem;
+    max-width: 40rem;
+    margin: auto;
+    box-shadow: 0px 1px 4px 0px variables.$black;
+
+    .chatbox-header {
+        margin-bottom: 1em;
+        color: variables.$black;
+    }
+
+    // Messages
+    .message {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid variables.$black;
+
+        &:nth-child(even) {
+            background-color: variables.$primary;
+        }
+
+        &:nth-child(odd) {
+            background-color: variables.$secondary;
+        }
+
+        .message-sender {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+
+        .message-text {
+            margin-bottom: 0.3rem;
+            word-wrap: break-word;
+
+            a {
+                color: variables.$blue;
+
+                &:hover {
+                    color: variables.$black;
+                }
+            }
+        }
+
+        .message-timestamp {
+            font-size: 0.75rem;
+            text-align: right;
+        }
+    }
+
+    .chatbox-messages {
+        height: 22em;
+        overflow-y: scroll;
+    }
+
+    // Message Form
+    .chatbox-input-form {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+        gap: 0.7rem;
+
+        .chatbox-input {
+            padding: 0.7rem;
+            border: none;
+            border-radius: 0.5rem;
+            background-color: variables.$white;
+            color: variables.$black;
+            flex-grow: 1;
+            border: 1px solid variables.$black;
+        }
+
+        .send-button {
+            background-color: variables.$white;
+            color: variables.$black;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+    }
+
+    .clear-chat-button {
+        background-color: variables.$white;
+        display: block;
+        margin: 1.5rem auto;
+        font-weight: bold;
+    }
+
+    // Buttons
+    .button {
+        border: none;
+        padding: 0.7rem;
+        border-radius: 0.5rem;
+        border: 1px solid variables.$black;
+
+        &:hover {
+            opacity: 80%;
+        }
+
+        &:active {
+            transform: translateY(2px);
+        }
+    }
+}
+@media screen and (max-width: 766px) {
+    .chatbox-container {
+        padding: 0.2rem;
+        height: 80vh;
+        width: 100vw;
+
+        .chatbox-header {
+            margin-bottom: 0rem;
+        }
+
+        // Messages
+        .message {
+            .message-sender {
+                margin-bottom: 0rem;
+            }
+
+            .message-text {
+                margin-bottom: 0rem;
+            }
+        }
+
+        .chatbox-messages {
+            height: 55vh;
+        }
+
+        // Message Form
+        .chatbox-input-form {
+            margin-top: 0.2rem;
+            gap: 0rem;
+
+            .chatbox-input {
+                padding: 0.5rem;
+                width: 60vw;
+            }
+        }
+
+        .clear-chat-button {
+            margin: 0.2rem auto;
+        }
+
+        // Buttons
+        .button {
+            padding: 0.5rem;
+        }
+    }
+}
+
+// Toggalable styles for light and dark mode buttons
+.light-mode {
+    background-color: variables.$white !important;
+    color: variables.$black !important;
+}
+
+.dark-mode {
+    background-color: variables.$black !important;
+    color: variables.$white !important;
+}
+
+.divs-light-mode-border {
+    border: 1px solid variables.$darkGray !important;
+}
+
+.divs-dark-mode-border {
+    border: 1px solid variables.$gray !important;
+}
+
+// Styles for animation on scroll
+.fadeInLeft {
+    animation: fadeInLeft 1.2s both;
+}
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fadeInRight {
+    animation: fadeInRight 1.2s both;
+}
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fadeInTop {
+    animation: fadeInTop 1.2s both;
+}
+@keyframes fadeInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+// Article pages styling
+.article-main {
+    max-width: 55vw;
+    margin: auto;
+
+    .article-header {
+        position: relative;
+
+        .article-header-image {
+            width: 100%;
+            filter: brightness(40%);
+        }
+
+        .article-header-title {
+            color: variables.$lightText;
+            position: absolute;
+            bottom: 5rem;
+            left: 2rem;
+        }
+
+        .article-header-updated-date {
+            color: variables.$lightText;
+            position: absolute;
+            bottom: 3rem;
+        }
+
+        .article-header-comments-number {
+            position: absolute;
+            bottom: 1rem;
+            color: variables.$lightText;
+            text-decoration: underline;
+
+            a {
+                color: variables.$lightText;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    
+    h2 {
+        background-color: variables.$black;
+        color: variables.$lightText;
+        padding: 0.5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-bottom: 1rem;
+
+        &:not(:first-child) {
+            margin-top: 4rem;
+        }    
+    }
+    
+    p, h3, iframe {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    iframe {
+        width: 100%;
+        height: auto;
+    }
+
+    .article-comments {
+        margin-top: 4rem;
+
+        // Heading on top of the comments section that says how many comments are on the page
+        .comments-header {
+            border-top: 2px solid variables.$black;
+            margin-bottom: 2rem;
+
+            h2 {
+                background-color: variables.$white;
+                color: variables.$darkText;
+                text-align: center;
+            }
+        }
+
+        // Grouping of each comment
+        .comments-content {
+            padding-left: 2rem;
+            padding-right: 2rem;
+            margin-bottom: 1rem;
+
+            // Wrapper around each individual comment
+            .comment {
+                margin-top: 2rem;
+                border-left: 1px solid variables.$black;
+            }
+            
+            // Put a border around each comment group so replies are grouped together
+            .depth-1 {
+                border: 1px solid variables.$black;
+                padding: 0.5rem;
+            }
+
+            // Indent each level of replies 
+            .depth-2,
+            .depth-3,
+            .depth-4,
+            .depth-5,
+            .depth-6,
+            .depth-7,
+            .depth-8,
+            .depth-9,
+            .depth-10 {
+                margin-left: 3rem;
+                padding-left: 0.5rem;
+            }
+
+            // The comments image, name and link within the name
+            .comment-author {
+
+                img {
+                    display: block;
+                }
+
+                .fn {
+                    .url {
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                        text-decoration: none;
+                    }
+                }
+
+                .says {
+                    display: none;
+                }
+            }
+
+            // Made the post authors comment unique
+            .bypostauthor {
+                .fn {
+                    .url {
+                        color: variables.$primary;
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                        text-decoration: none;
+
+                        &::before {
+                            content: "(Post Author) ";
+                        }
+                    }
+                }
+            }
+
+            // Metadata for the comment such as the date and the edit button
+            .comment-meta {
+                text-decoration: underline;
+
+                a:nth-child(1) {
+                    color: variables.$black;
+                    text-decoration: none;
+                }
+            }
+
+            // The actual comment's content
+            p {
+                margin-top: 1rem;
+            }
+
+            // Reply button underneath each comment
+            .reply {
+                a {
+                    margin-top: 1rem;
+                    padding: 0.5rem;
+                    border: 1px solid variables.$black;
+                    border-radius: 4px;
+                    color: variables.$black;
+                    background-color: variables.$primary;
+                    text-decoration: none;
+                    display: inline-block;
+
+                    &:hover {
+                        opacity: 60%;
+                    }
+                }
+            }
+        }
+
+        // Form section for leaving a new comment
+        .comments-form {
+            border-top: 2px solid variables.$black;
+            margin-bottom: 2rem;
+
+            h2 {
+                background-color: variables.$white;
+                color: variables.$darkText;
+                text-align: center;
+            }
+
+            // Text up the top with buttons for editing profile and logging out
+            .logged-in-as {
+
+                a {
+                    padding: 0.5rem;
+                    border: 1px solid variables.$black;
+                    border-radius: 4px;
+                    color: variables.$black;
+                    background-color: variables.$secondary;
+                    text-decoration: none;
+
+                    &:hover {
+                        opacity: 60%;
+                    }
+                }
+            }
+
+            // The label and text area for user to input their comment
+            .comment-form-comment {
+
+                label {
+                    width: 100%;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                }
+
+                textarea {
+                    width: 100%;
+                    border-radius: 4px;
+                    border: 2px solid variables.$black;
+                }
+            }
+
+            // Submit button for this form
+            .form-submit {
+
+                input {
+                    padding: 0.5rem;
+                    border: 1px solid variables.$black;
+                    border-radius: 4px;
+                    color: variables.$black;
+                    background-color: variables.$primary;
+
+                    &:hover {
+                        opacity: 60%;
+                    }
+                }
+            }
+
+            // Extra form fields for when the user isn't logged in
+            .comment-form-author,
+            .comment-form-email,
+            .comment-form-url {
+
+                label {
+                    width: 100%;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                }
+
+                input {
+                    border-radius: 4px;
+                    border: 2px solid variables.$black;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1400px) {
+    .article-main {
+        max-width: 80vw;
+    }
+}
+@media screen and (max-width: 992px) {
+    .article-main {
+        max-width: 100vw;
+    }
+}
+
+
+/* -------------------- Header -------------------- */
+header {
+    
+    nav {
+        background-color: variables.$darkBackground;
+        box-shadow: 0px 1px 4px 0px variables.$black;
+
+        .navbar-toggler {
+            background-color: variables.$white;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .navbar-brand {
+            color: variables.$lightText;
+
+            &:hover {
+                color: variables.$lightText;
+                opacity: 70%;
+            }
+        }
+
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        
+        #leftMenu {
+            background-color: variables.$darkBackground;
+            box-shadow: 0px 1px 4px 0px variables.$black;
+
+            // Allows scrolling on navigation elemnts so they don't get cutoff
+            max-height: 75vh;
+            overflow-y: auto;
+
+            ul {
+                overflow-y: scroll;
+            }
+            
+            li {
+                display: inline-block;
+                font-size: 1.5rem;
+
+                img {
+                    background-color: variables.$white;
+                    white-space: nowrap;
+                }
+
+                a {
+                    color: variables.$lightText;
+                }
+            }
+        }
+    }
+}
+
+/* -------------------- Footer -------------------- */
+footer {
+    background-color: variables.$darkBackground;
+
+    .row {
+        border-bottom: 1px solid variables.$darkGray;
+    }
+
+    a, li, h2, p, i {
+        color: variables.$lightText;
+    }
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .search-form {
+        input {
+            border-radius: 4px;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        button {
+            border-radius: 4px;
+            border: none;
+            padding: 0.5rem;
+        }
+    }
+
+    .accessibility-features {
+        .row {
+            border: none;
+        }
+
+        .btn-font-size,
+        .btn-contrast,
+        .btn-borders {
+            color: variables.$lightText;
+    
+            &:hover {
+                text-decoration: underline;
+                color: variables.$lightText;
+            }
+        }
+    }
+
+}
+@media screen and (max-width: 991px) {
+    footer {
+        section {
+            border-bottom: 1px solid variables.$darkGray;
+        }
+
+        .row {
+            border-bottom: none;
+        }
+    }
+}
+
+/* -------------------- Main Home Page -------------------- */
+.main-home-page {
+    .button-icon-navigation {
+        padding: 2rem;
+        border: 1px solid variables.$black;
+        border-radius: 1rem;
+        font-size: 1.5rem;
+        box-shadow: 0px 1px 4px 0px variables.$black;
+
+        a {
+            color: variables.$darkText;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        // Push icons back up to be inline with page links
+        img {
+            margin-bottom: 0.3rem;
+        }
+    }
+
+    .show-more-button,
+    .show-less-button {
+        border: none;
+        background-color: variables.$white;
+        margin: 0 auto;
+        margin-top: 1rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .hidden {
+        display: none !important;
+    }
+}
+
+/* -------------------- Main Sitemap Page -------------------- */
+.main-sitemap-page {
+    .internal-links,
+    .external-links,
+    .links-to-pdf-documents {
+        border: 1px solid variables.$black;
+        border-radius: 8px;
+    }
+
+    // Styling for the pdf documents widget
+    .widget-sitemap-page-pdf-resources {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        .wp-block-file {
+            display: inline;
+            
+            a {
+                font-size: 1rem;
+            }
+
+            .wp-block-file__button.wp-element-button {
+                display: block;
+                width: 5.25rem;
+                padding: 0.3rem;
+                border-radius: 0.5rem;
+                margin-left: 1rem;
+            }
+        }
+    }
+}

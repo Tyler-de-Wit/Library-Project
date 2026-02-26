@@ -1,0 +1,610 @@
+/* -------------------- Fonts -------------------- */
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/nunito-variablefont-weight.ttf");
+}
+/* -------------------- Global Styles -------------------- */
+* {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+header {
+  height: 76px;
+}
+
+main {
+  min-height: 95vh;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 5rem;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 99;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+}
+
+.skip-link:focus {
+  width: auto;
+  height: auto;
+  color: #ff0000 !important;
+  transform: translateY(0%);
+}
+
+#scroll-to-top-button {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: 1px solid #000000;
+  outline: none;
+  background-color: #ff4e51;
+  color: #000000;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+#scroll-to-top-button:hover {
+  background-color: #276df9;
+}
+#scroll-to-top-button:active {
+  transform: translateY(5px);
+}
+#scroll-to-top-button::after {
+  content: " Back To Top";
+}
+
+@media screen and (max-width: 766px) {
+  #scroll-to-top-button::after {
+    content: "";
+  }
+}
+.pagination {
+  margin-bottom: 1rem;
+}
+.pagination .page-numbers {
+  padding: 0.5rem;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  color: #000000;
+}
+.pagination .page-numbers:hover {
+  color: #0000ff;
+}
+.pagination .current:hover {
+  color: #000000;
+}
+
+.chatbox-container {
+  background: #f3f3f3;
+  border-radius: 0rem 0rem 0.5rem 0.5rem;
+  padding: 1rem;
+  height: 38rem;
+  max-width: 40rem;
+  margin: auto;
+  box-shadow: 0px 1px 4px 0px #000000;
+}
+.chatbox-container .chatbox-header {
+  margin-bottom: 1em;
+  color: #000000;
+}
+.chatbox-container .message {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000000;
+}
+.chatbox-container .message:nth-child(even) {
+  background-color: #ff4e51;
+}
+.chatbox-container .message:nth-child(odd) {
+  background-color: #276df9;
+}
+.chatbox-container .message .message-sender {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+.chatbox-container .message .message-text {
+  margin-bottom: 0.3rem;
+  word-wrap: break-word;
+}
+.chatbox-container .message .message-text a {
+  color: #0000ff;
+}
+.chatbox-container .message .message-text a:hover {
+  color: #000000;
+}
+.chatbox-container .message .message-timestamp {
+  font-size: 0.75rem;
+  text-align: right;
+}
+.chatbox-container .chatbox-messages {
+  height: 22em;
+  overflow-y: scroll;
+}
+.chatbox-container .chatbox-input-form {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 0.7rem;
+}
+.chatbox-container .chatbox-input-form .chatbox-input {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  color: #000000;
+  flex-grow: 1;
+  border: 1px solid #000000;
+}
+.chatbox-container .chatbox-input-form .send-button {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.chatbox-container .clear-chat-button {
+  background-color: #ffffff;
+  display: block;
+  margin: 1.5rem auto;
+  font-weight: bold;
+}
+.chatbox-container .button {
+  border: none;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  border: 1px solid #000000;
+}
+.chatbox-container .button:hover {
+  opacity: 80%;
+}
+.chatbox-container .button:active {
+  transform: translateY(2px);
+}
+
+@media screen and (max-width: 766px) {
+  .chatbox-container {
+    padding: 0.2rem;
+    height: 80vh;
+    width: 100vw;
+  }
+  .chatbox-container .chatbox-header {
+    margin-bottom: 0rem;
+  }
+  .chatbox-container .message .message-sender {
+    margin-bottom: 0rem;
+  }
+  .chatbox-container .message .message-text {
+    margin-bottom: 0rem;
+  }
+  .chatbox-container .chatbox-messages {
+    height: 55vh;
+  }
+  .chatbox-container .chatbox-input-form {
+    margin-top: 0.2rem;
+    gap: 0rem;
+  }
+  .chatbox-container .chatbox-input-form .chatbox-input {
+    padding: 0.5rem;
+    width: 60vw;
+  }
+  .chatbox-container .clear-chat-button {
+    margin: 0.2rem auto;
+  }
+  .chatbox-container .button {
+    padding: 0.5rem;
+  }
+}
+.light-mode {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.dark-mode {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.divs-light-mode-border {
+  border: 1px solid #8f8f8f !important;
+}
+
+.divs-dark-mode-border {
+  border: 1px solid #f3f3f3 !important;
+}
+
+.fadeInLeft {
+  animation: fadeInLeft 1.2s both;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.fadeInRight {
+  animation: fadeInRight 1.2s both;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.fadeInTop {
+  animation: fadeInTop 1.2s both;
+}
+
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.article-main {
+  max-width: 55vw;
+  margin: auto;
+}
+.article-main .article-header {
+  position: relative;
+}
+.article-main .article-header .article-header-image {
+  width: 100%;
+  filter: brightness(40%);
+}
+.article-main .article-header .article-header-title {
+  color: #ffffff;
+  position: absolute;
+  bottom: 5rem;
+  left: 2rem;
+}
+.article-main .article-header .article-header-updated-date {
+  color: #ffffff;
+  position: absolute;
+  bottom: 3rem;
+}
+.article-main .article-header .article-header-comments-number {
+  position: absolute;
+  bottom: 1rem;
+  color: #ffffff;
+  text-decoration: underline;
+}
+.article-main .article-header .article-header-comments-number a {
+  color: #ffffff;
+}
+.article-main .article-header .article-header-comments-number a:hover {
+  text-decoration: none;
+}
+.article-main h2 {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+}
+.article-main h2:not(:first-child) {
+  margin-top: 4rem;
+}
+.article-main p, .article-main h3, .article-main iframe {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.article-main iframe {
+  width: 100%;
+  height: auto;
+}
+.article-main .article-comments {
+  margin-top: 4rem;
+}
+.article-main .article-comments .comments-header {
+  border-top: 2px solid #000000;
+  margin-bottom: 2rem;
+}
+.article-main .article-comments .comments-header h2 {
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+}
+.article-main .article-comments .comments-content {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+}
+.article-main .article-comments .comments-content .comment {
+  margin-top: 2rem;
+  border-left: 1px solid #000000;
+}
+.article-main .article-comments .comments-content .depth-1 {
+  border: 1px solid #000000;
+  padding: 0.5rem;
+}
+.article-main .article-comments .comments-content .depth-2,
+.article-main .article-comments .comments-content .depth-3,
+.article-main .article-comments .comments-content .depth-4,
+.article-main .article-comments .comments-content .depth-5,
+.article-main .article-comments .comments-content .depth-6,
+.article-main .article-comments .comments-content .depth-7,
+.article-main .article-comments .comments-content .depth-8,
+.article-main .article-comments .comments-content .depth-9,
+.article-main .article-comments .comments-content .depth-10 {
+  margin-left: 3rem;
+  padding-left: 0.5rem;
+}
+.article-main .article-comments .comments-content .comment-author img {
+  display: block;
+}
+.article-main .article-comments .comments-content .comment-author .fn .url {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.article-main .article-comments .comments-content .comment-author .says {
+  display: none;
+}
+.article-main .article-comments .comments-content .bypostauthor .fn .url {
+  color: #ff4e51;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.article-main .article-comments .comments-content .bypostauthor .fn .url::before {
+  content: "(Post Author) ";
+}
+.article-main .article-comments .comments-content .comment-meta {
+  text-decoration: underline;
+}
+.article-main .article-comments .comments-content .comment-meta a:nth-child(1) {
+  color: #000000;
+  text-decoration: none;
+}
+.article-main .article-comments .comments-content p {
+  margin-top: 1rem;
+}
+.article-main .article-comments .comments-content .reply a {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  color: #000000;
+  background-color: #ff4e51;
+  text-decoration: none;
+  display: inline-block;
+}
+.article-main .article-comments .comments-content .reply a:hover {
+  opacity: 60%;
+}
+.article-main .article-comments .comments-form {
+  border-top: 2px solid #000000;
+  margin-bottom: 2rem;
+}
+.article-main .article-comments .comments-form h2 {
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+}
+.article-main .article-comments .comments-form .logged-in-as a {
+  padding: 0.5rem;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  color: #000000;
+  background-color: #276df9;
+  text-decoration: none;
+}
+.article-main .article-comments .comments-form .logged-in-as a:hover {
+  opacity: 60%;
+}
+.article-main .article-comments .comments-form .comment-form-comment label {
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.article-main .article-comments .comments-form .comment-form-comment textarea {
+  width: 100%;
+  border-radius: 4px;
+  border: 2px solid #000000;
+}
+.article-main .article-comments .comments-form .form-submit input {
+  padding: 0.5rem;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  color: #000000;
+  background-color: #ff4e51;
+}
+.article-main .article-comments .comments-form .form-submit input:hover {
+  opacity: 60%;
+}
+.article-main .article-comments .comments-form .comment-form-author label,
+.article-main .article-comments .comments-form .comment-form-email label,
+.article-main .article-comments .comments-form .comment-form-url label {
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.article-main .article-comments .comments-form .comment-form-author input,
+.article-main .article-comments .comments-form .comment-form-email input,
+.article-main .article-comments .comments-form .comment-form-url input {
+  border-radius: 4px;
+  border: 2px solid #000000;
+}
+
+@media screen and (max-width: 1400px) {
+  .article-main {
+    max-width: 80vw;
+  }
+}
+@media screen and (max-width: 992px) {
+  .article-main {
+    max-width: 100vw;
+  }
+}
+/* -------------------- Header -------------------- */
+header nav {
+  background-color: #000000;
+  box-shadow: 0px 1px 4px 0px #000000;
+}
+header nav .navbar-toggler {
+  background-color: #ffffff;
+}
+header nav .navbar-toggler:hover {
+  text-decoration: underline;
+}
+header nav .navbar-brand {
+  color: #ffffff;
+}
+header nav .navbar-brand:hover {
+  color: #ffffff;
+  opacity: 70%;
+}
+header nav a:hover {
+  text-decoration: underline;
+}
+header nav #leftMenu {
+  background-color: #000000;
+  box-shadow: 0px 1px 4px 0px #000000;
+  max-height: 75vh;
+  overflow-y: auto;
+}
+header nav #leftMenu ul {
+  overflow-y: scroll;
+}
+header nav #leftMenu li {
+  display: inline-block;
+  font-size: 1.5rem;
+}
+header nav #leftMenu li img {
+  background-color: #ffffff;
+  white-space: nowrap;
+}
+header nav #leftMenu li a {
+  color: #ffffff;
+}
+
+/* -------------------- Footer -------------------- */
+footer {
+  background-color: #000000;
+}
+footer .row {
+  border-bottom: 1px solid #8f8f8f;
+}
+footer a, footer li, footer h2, footer p, footer i {
+  color: #ffffff;
+}
+footer a {
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer .search-form input {
+  border-radius: 4px;
+  border: none;
+  padding: 0.5rem;
+}
+footer .search-form button {
+  border-radius: 4px;
+  border: none;
+  padding: 0.5rem;
+}
+footer .accessibility-features .row {
+  border: none;
+}
+footer .accessibility-features .btn-font-size,
+footer .accessibility-features .btn-contrast,
+footer .accessibility-features .btn-borders {
+  color: #ffffff;
+}
+footer .accessibility-features .btn-font-size:hover,
+footer .accessibility-features .btn-contrast:hover,
+footer .accessibility-features .btn-borders:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 991px) {
+  footer section {
+    border-bottom: 1px solid #8f8f8f;
+  }
+  footer .row {
+    border-bottom: none;
+  }
+}
+/* -------------------- Main Home Page -------------------- */
+.main-home-page .button-icon-navigation {
+  padding: 2rem;
+  border: 1px solid #000000;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  box-shadow: 0px 1px 4px 0px #000000;
+}
+.main-home-page .button-icon-navigation a {
+  color: #000000;
+  text-decoration: none;
+}
+.main-home-page .button-icon-navigation a:hover {
+  text-decoration: underline;
+}
+.main-home-page .button-icon-navigation img {
+  margin-bottom: 0.3rem;
+}
+.main-home-page .show-more-button,
+.main-home-page .show-less-button {
+  border: none;
+  background-color: #ffffff;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+.main-home-page .show-more-button:hover,
+.main-home-page .show-less-button:hover {
+  text-decoration: underline;
+}
+.main-home-page .hidden {
+  display: none !important;
+}
+
+/* -------------------- Main Sitemap Page -------------------- */
+.main-sitemap-page .internal-links,
+.main-sitemap-page .external-links,
+.main-sitemap-page .links-to-pdf-documents {
+  border: 1px solid #000000;
+  border-radius: 8px;
+}
+.main-sitemap-page .widget-sitemap-page-pdf-resources {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.main-sitemap-page .widget-sitemap-page-pdf-resources .wp-block-file {
+  display: inline;
+}
+.main-sitemap-page .widget-sitemap-page-pdf-resources .wp-block-file a {
+  font-size: 1rem;
+}
+.main-sitemap-page .widget-sitemap-page-pdf-resources .wp-block-file .wp-block-file__button.wp-element-button {
+  display: block;
+  width: 5.25rem;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  margin-left: 1rem;
+}/*# sourceMappingURL=style.css.map */

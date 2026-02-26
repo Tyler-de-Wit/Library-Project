@@ -1,0 +1,9 @@
+# Ignore the languages and upgrade folders in wp-content
+/languages/
+/upgrade/
+
+# Ignore the empty index.php file in wp-content
+/index.php
+
+# Ignore the empty index.php file in wp-content/plugins
+/plugins/index.php
