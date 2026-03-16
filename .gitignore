@@ -4,3 +4,12 @@
 
 # Ignore the empty index.php file in wp-content
 /index.php
+
+# Ignore the default themes that come with WordPress
+/themes/twentytwentyfive/
+/themes/twentytwentyfour/
+/themes/twentytwentythree/
+
+# Ignore the default plugins that come with WordPress
+/plugins/akismet/
+/plugins/hello.php
