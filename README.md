@@ -3,6 +3,7 @@
 2. Then in phpmyadmin create a new database called "wordpress1" and import the sql file also named "wordpress1" found inside of "themes/libraryproject/sql/wordpress1.sql" to populate the database
 3. Now go into the root of the WordPress installation and modify the wp-config.php file to have DB_NAME = "wordpress1" DB_USER = "root" and DB_PASSWORD = ""
 4. You can now and only now open the theme in a browser at localhost/wordpress1 
+5. To access the WordPress admin pannel the username is "wordpress1" and the password is "password"
 
 # Important Information For LibraryProject Theme
 The icons that appear in the hamburger menu and on the button links on the home page are dynamically inserted into the site from the WordPress uploads folder. These icons should be uploaded from the WordPress media library. With the exception of the home page icon in the main menu and the fallback icon. These icons are stored and pulled from the themes assets folder.
