@@ -32,7 +32,7 @@
         <a class="navbar-brand fw-bold text-center" href="<?php echo home_url(); ?>">NMT Library</a>
 
         <!-- Right Toggler -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#rightMenu" aria-controls="rightMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#rightMenu" aria-controls="rightMenu" aria-expanded="false" aria-label="Toggle navigation" id="right-menu-toggler">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/search-icon.png" alt="Search Icon" width="50">
         </button>
 

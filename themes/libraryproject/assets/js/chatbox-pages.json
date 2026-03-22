@@ -1,0 +1,134 @@
+{
+    "microsoft": {
+        "pageTitle": "Microsoft Setup",
+        "pageLink": "microsoft-365",
+        "queries": [
+            "microsoft",
+            "authenticator"
+        ]
+    },
+    "blackboard": {
+        "pageTitle": "Access Blackboard",
+        "pageLink": "blackboard",
+        "queries": [
+            "blackboard"
+        ]
+    },
+    "wifi": {
+        "pageTitle": "Login To WIFI",
+        "pageLink": "wifi",
+        "queries": [
+            "wifi",
+            "wi-fi"
+        ]
+    },
+    "amep": {
+        "pageTitle": "AMEP",
+        "pageLink": "amep",
+        "queries": [
+            "amep",
+            "english"
+        ]
+    },
+    "libraryPrinters": {
+        "pageTitle": "Library Printers",
+        "pageLink": "printers",
+        "queries": [
+            "printers"
+        ]
+    },
+    "passwords": {
+        "pageTitle": "Password Help",
+        "pageLink": "passwords",
+        "queries": [
+            "password"
+        ]
+    },
+    "timetable": {
+        "pageTitle": "Locating Timetable",
+        "pageLink": "timetable",
+        "queries": [
+            "timetable"
+        ]
+    },
+    "studentCard": {
+        "pageTitle": "Student Card",
+        "pageLink": "student-id-card",
+        "queries": [
+            "card",
+            "student"
+        ]
+    },
+    "smartRider": {
+        "pageTitle": "Smart Rider",
+        "pageLink": "smart-rider",
+        "queries": [
+            "discount",
+            "smartrider",
+            "smart rider",
+            "transperth"
+        ]
+    },
+    "libraryStudyRooms": {
+        "pageTitle": "Library Study Rooms",
+        "pageLink": "book-a-study-room",
+        "queries": [
+            "study",
+            "rooms"
+        ]
+    },
+    "disabilitySupport": {
+        "pageTitle": "Disability Support",
+        "pageLink": "disability-support",
+        "queries": [
+            "disability"
+        ]
+    },
+    "jobsAndSkills": {
+        "pageTitle": "Jobs And Skills Centre",
+        "pageLink": "jobs-and-skills-centre",
+        "queries": [
+            "jobs",
+            "skills"
+        ]
+    },
+    "faq": {
+        "pageTitle": "Frequently Asked Questions",
+        "pageLink": "frequently-asked-questions",
+        "queries": [
+            "faq",
+            "frequently",
+            "question"
+        ]
+    },
+    "contactUs": {
+        "pageTitle": "Contact Us",
+        "pageLink": "contact",
+        "queries": [
+            "contact",
+            "help"
+        ]
+    },
+    "sitemap": {
+        "pageTitle": "Sitemap",
+        "pageLink": "sitemap",
+        "queries": [
+            "sitemap"
+        ]
+    },
+    "articles": {
+        "pageTitle": "Articles",
+        "pageLink": "articles",
+        "queries": [
+            "articles",
+            "posts"
+        ]
+    },
+    "other": {
+        "pageTitle": "Sitemap",
+        "pageLink": "sitemap",
+        "queries": [
+            ""
+        ]
+    }
+}
