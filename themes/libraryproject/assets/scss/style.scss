@@ -33,12 +33,12 @@ main {
     width: 1px;
     height: 1px;
     overflow: hidden;
-    z-index:99;
+    z-index: 99;
     transform: translateY(-100%);
     transition: transform 0.3s;
 }
 
-.skip-link:focus {  
+.skip-link:focus {
     width: auto;
     height: auto;
     color: variables.$red !important;
@@ -72,6 +72,7 @@ main {
         content: ' Back To Top';
     }
 }
+
 @media screen and (max-width: 766px) {
     #scroll-to-top-button {
         &::after {
@@ -83,18 +84,18 @@ main {
 // WordPress Pagination
 .pagination {
     margin-bottom: 1rem;
-    
+
     .page-numbers {
         padding: 0.5rem;
         border: 1px solid #000000;
         border-radius: 4px;
         color: variables.$black;
-        
+
         &:hover {
             color: variables.$blue;
         }
     }
-    
+
     .current {
         &:hover {
             color: variables.$black;
@@ -211,6 +212,7 @@ main {
         }
     }
 }
+
 @media screen and (max-width: 766px) {
     .chatbox-container {
         padding: 0.2rem;
@@ -281,11 +283,13 @@ main {
 .fadeInLeft {
     animation: fadeInLeft 1.2s both;
 }
+
 @keyframes fadeInLeft {
     0% {
         opacity: 0;
         transform: translateX(-50px);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0);
@@ -295,11 +299,13 @@ main {
 .fadeInRight {
     animation: fadeInRight 1.2s both;
 }
+
 @keyframes fadeInRight {
     0% {
         opacity: 0;
         transform: translateX(50px);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0);
@@ -309,11 +315,13 @@ main {
 .fadeInTop {
     animation: fadeInTop 1.2s both;
 }
+
 @keyframes fadeInTop {
     0% {
         opacity: 0;
         transform: translateY(-50px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -362,7 +370,7 @@ main {
             }
         }
     }
-    
+
     h2 {
         background-color: variables.$black;
         color: variables.$lightText;
@@ -373,17 +381,18 @@ main {
 
         &:not(:first-child) {
             margin-top: 4rem;
-        }    
+        }
     }
-    
-    p, h3, iframe {
+
+    p,
+    h3,
+    figure {
         padding-left: 2rem;
         padding-right: 2rem;
     }
 
     iframe {
         width: 100%;
-        height: auto;
     }
 
     .article-comments {
@@ -412,7 +421,7 @@ main {
                 margin-top: 2rem;
                 border-left: 1px solid variables.$black;
             }
-            
+
             // Put a border around each comment group so replies are grouped together
             .depth-1 {
                 border: 1px solid variables.$black;
@@ -582,11 +591,13 @@ main {
         }
     }
 }
+
 @media screen and (max-width: 1400px) {
     .article-main {
         max-width: 80vw;
     }
 }
+
 @media screen and (max-width: 992px) {
     .article-main {
         max-width: 100vw;
@@ -596,7 +607,7 @@ main {
 
 /* -------------------- Header -------------------- */
 header {
-    
+
     nav {
         background-color: variables.$darkBackground;
         box-shadow: 0px 1px 4px 0px variables.$black;
@@ -623,7 +634,7 @@ header {
                 text-decoration: underline;
             }
         }
-        
+
         #leftMenu {
             background-color: variables.$darkBackground;
             box-shadow: 0px 1px 4px 0px variables.$black;
@@ -635,7 +646,7 @@ header {
             ul {
                 overflow-y: scroll;
             }
-            
+
             li {
                 display: inline-block;
                 font-size: 1.5rem;
@@ -661,7 +672,11 @@ footer {
         border-bottom: 1px solid variables.$darkGray;
     }
 
-    a, li, h2, p, i {
+    a,
+    li,
+    h2,
+    p,
+    i {
         color: variables.$lightText;
     }
 
@@ -696,7 +711,7 @@ footer {
         .btn-contrast,
         .btn-borders {
             color: variables.$lightText;
-    
+
             &:hover {
                 text-decoration: underline;
                 color: variables.$lightText;
@@ -705,6 +720,7 @@ footer {
     }
 
 }
+
 @media screen and (max-width: 991px) {
     footer {
         section {
@@ -760,6 +776,7 @@ footer {
 
 /* -------------------- Main Sitemap Page -------------------- */
 .main-sitemap-page {
+
     .internal-links,
     .external-links,
     .links-to-pdf-documents {
@@ -774,7 +791,7 @@ footer {
 
         .wp-block-file {
             display: inline;
-            
+
             a {
                 font-size: 1rem;
             }

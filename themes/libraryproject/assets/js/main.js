@@ -126,7 +126,7 @@ function addBorders() {
     // Add contrast border class to all divs and sections on the page
     const divs = document.querySelectorAll('div');
     for (let i = 0; i < divs.length; i++) {
-        
+
         // Test if the page is in light or dark mode to add the correct border
         if (sessionStorage.getItem("contrast") == "light") {
             divs[i].classList.add('divs-light-mode-border');
@@ -163,9 +163,9 @@ function removeBorders() {
         divs[i].classList.remove('divs-light-mode-border');
         divs[i].classList.remove('divs-dark-mode-border');
     }
-    
+
     const sections = document.querySelectorAll('section');
-    for (let i = 0; i < sections.length; i++) {        
+    for (let i = 0; i < sections.length; i++) {
         sections[i].classList.remove('divs-light-mode-border');
         sections[i].classList.remove('divs-dark-mode-border');
     }
@@ -248,7 +248,7 @@ const observerRight = new IntersectionObserver((entries) => {
     threshold: 0.5
 });
 targetElementsRight.forEach(element => {
-    observerRight.observe(element); 
+    observerRight.observe(element);
 });
 
 // When an element with the class ".animateTop" is within the viewport the class ".fadeInTop" is added
@@ -271,15 +271,15 @@ targetElementsTop.forEach(element => {
 // -------------------- Event Listeners and Default Behaviour -------------------- //
 function init() {
     'use strict';
-    
+
     // -------------------- Scroll to top of page -------------------- //
     // Showing and hiding scroll to top button based on users scroll position
     let scrollToTopButton = document.getElementById("scroll-to-top-button");
-    
+
     // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {showScrollButton()};
-    
-    function showScrollButton() {        
+    window.onscroll = function () { showScrollButton() };
+
+    function showScrollButton() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             scrollToTopButton.style.display = "block";
         } else {
@@ -330,7 +330,7 @@ function init() {
     // Change border buttons
     document.getElementById('add-borders-button').addEventListener('click', addBorders);
     document.getElementById('remove-borders-button').addEventListener('click', removeBorders);
-    
+
 
     // -------------------- Show More Elements -------------------- //
     // Error handle event listeners to prevent an error being thrown if that element does not appear on the page

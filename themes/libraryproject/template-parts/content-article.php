@@ -19,7 +19,7 @@
                 if (get_comments_number() == 1) {
                     echo '<a href="#comments-section">1 Comment</a>';
                 } else {
-                    echo get_comments_number() . '<a href="#comments-section"> Comments</a>';
+                    echo '<a href="#comments-section">' . get_comments_number() . ' Comments</a>';
                 }
 
             ?>

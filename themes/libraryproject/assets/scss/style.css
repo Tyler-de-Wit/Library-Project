@@ -308,13 +308,14 @@ main {
 .article-main h2:not(:first-child) {
   margin-top: 4rem;
 }
-.article-main p, .article-main h3, .article-main iframe {
+.article-main p,
+.article-main h3,
+.article-main figure {
   padding-left: 2rem;
   padding-right: 2rem;
 }
 .article-main iframe {
   width: 100%;
-  height: auto;
 }
 .article-main .article-comments {
   margin-top: 4rem;
@@ -509,7 +510,11 @@ footer {
 footer .row {
   border-bottom: 1px solid #8f8f8f;
 }
-footer a, footer li, footer h2, footer p, footer i {
+footer a,
+footer li,
+footer h2,
+footer p,
+footer i {
   color: #ffffff;
 }
 footer a {
