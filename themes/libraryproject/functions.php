@@ -187,3 +187,15 @@ function add_class_to_menu_anchor_tags($atts, $item, $args) {
     return $atts;
 }
 add_filter('nav_menu_link_attributes', 'add_class_to_menu_anchor_tags', 10, 3);
+
+// Add unique id to each heading on the page for table of contents
+function auto_id_headings( $content ) {
+    $content = preg_replace_callback( '/(\<h[1-6](.*?))\>(.*)(<\/h[1-6]>)/i', function( $matches ) {
+        if ( ! stripos( $matches[0], 'id=' ) ) :
+            $matches[0] = $matches[1] . ' id="' . sanitize_title( $matches[3] ) . '">' . $matches[3] . $matches[4];
+        endif;
+        return $matches[0];
+    }, $content );
+    return $content;
+}
+add_filter( 'the_content', 'auto_id_headings' );

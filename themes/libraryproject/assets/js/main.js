@@ -268,6 +268,35 @@ targetElementsTop.forEach(element => {
 });
 
 
+// -------------------- Generate Table Of Contents -------------------- //
+// Automatically generates a table of contents from the heading elemnts on the page
+function generateTableOfContents() {
+    'use strict';
+
+    // Get the id's for each heading element into an array
+    let headingElementsIds = [];
+    document.querySelectorAll('.wp-block-heading').forEach((heading) => {
+        headingElementsIds.push(heading.id);
+    });
+
+    // Get the values for each heading element into an array
+    let headingElementsValues = [];
+    document.querySelectorAll('.wp-block-heading').forEach((heading) => {
+        headingElementsValues.push(heading.innerHTML);
+    });
+
+    // Create table of contents output
+    let output = "";
+    for (let i = 0; i < headingElementsIds.length; i++) {
+        output += `<li><a href="#${headingElementsIds[i]}">${headingElementsValues[i]}</a></li>`;
+    }
+    output = `<ul>${output}</ul>`;
+
+    // Output table of contents into HTML
+    document.getElementById('article-table-of-contents').innerHTML = output;
+}
+
+
 // -------------------- Event Listeners and Default Behaviour -------------------- //
 function init() {
     'use strict';
@@ -343,6 +372,9 @@ function init() {
     } catch (error) {
         // console.log(error);
     }
+
+    // -------------------- Generate Table Of Contents -------------------- //
+    generateTableOfContents();
 }
 
 

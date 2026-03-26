@@ -29,6 +29,8 @@
 
     <div class="article-content">
 
+        <?php get_template_part('template-parts/content', 'table-of-contents'); ?>
+
         <?php the_content(); ?>
 
     </div>

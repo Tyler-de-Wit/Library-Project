@@ -13,6 +13,14 @@ header {
   height: 76px;
 }
 
+h2,
+h3,
+h4,
+h5,
+h6 {
+  scroll-margin-top: 76px;
+}
+
 main {
   min-height: 95vh;
 }

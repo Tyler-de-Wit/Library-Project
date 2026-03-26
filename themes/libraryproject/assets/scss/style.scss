@@ -20,6 +20,15 @@ header {
     height: 76px;
 }
 
+// Stop page scrolling too far when table of contents anchor links are clicked
+h2,
+h3,
+h4,
+h5,
+h6 {
+    scroll-margin-top: 76px;
+}
+
 // Make sure footer is always positioned below initial screen position
 main {
     min-height: 95vh;
