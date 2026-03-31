@@ -331,8 +331,7 @@ function generateTableOfContents() {
     }
     output = `<ul>${output}</ul>`;
 
-    // Output table of contents into HTML
-    document.getElementById('article-table-of-contents').innerHTML = output;
+    return output;
 }
 
 
@@ -416,7 +415,14 @@ function init() {
     }
 
     // -------------------- Generate Table Of Contents -------------------- //
-    generateTableOfContents();
+    try {
+        // Output table of contents into HTML
+        document.getElementById('article-table-of-contents').innerHTML = generateTableOfContents();
+    } catch (error) {
+        // Error will be thrown when not on an article page as the div of id 'article-table-of-contents' will not exist
+        // console.log(error);
+    }
+
 }
 
 
