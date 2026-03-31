@@ -6,9 +6,11 @@
 /index.php
 
 # Ignore the default themes that come with WordPress
+/themes/twentytwentysix/
 /themes/twentytwentyfive/
 /themes/twentytwentyfour/
 /themes/twentytwentythree/
+/themes/twentytwentytwo/
 
 # Ignore the default plugins that come with WordPress
 /plugins/akismet/
