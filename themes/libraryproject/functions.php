@@ -199,3 +199,15 @@ function auto_id_headings( $content ) {
     return $content;
 }
 add_filter( 'the_content', 'auto_id_headings' );
+
+// Reduce the amount of words returned in the posts excerpt
+function custom_excerpt_length( $length ) {
+    return 35;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+// Change the "..." that appears when an excerpt it cut off
+function custom_excerpt_more( $more ) {
+    return '...';
+}
+add_filter( 'excerpt_more', 'custom_excerpt_more' );

@@ -3,7 +3,7 @@
 
     <div class="card-header">
 
-        <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" class="card-img-top" alt="Blog Post Thumbnail">
+        <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" class="card-img-top mb-2 mt-2" alt="Blog Post Thumbnail" height="250" width="auto">
 
         <a href="<?php the_permalink(); ?>" class="text-reset text-decoration-none">
             <h2 class="card-title"><?php the_title(); ?></h2>
