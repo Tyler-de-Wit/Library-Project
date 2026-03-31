@@ -9,6 +9,7 @@
                 <li><a href="frequently-asked-questions">FAQ</a></li>
                 <li><a href="contact">Contact</a></li>
                 <li><a href="sitemap">Sitemap</a></li>
+                <li><a href="articles">Articles</a></li>
             </ul>
         </section>
         <!-- Contacts -->

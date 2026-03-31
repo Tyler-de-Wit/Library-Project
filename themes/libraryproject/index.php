@@ -1,4 +1,4 @@
-<?php // Page to display all blog posts which is linked to by "blog" in the footer ?>
+<?php // Page to display all blog posts which is linked to by "articles" in the footer ?>
 <?php get_header(); ?>
 
 
