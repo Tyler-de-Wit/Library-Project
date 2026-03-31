@@ -546,12 +546,14 @@ footer .accessibility-features .row {
 }
 footer .accessibility-features .btn-font-size,
 footer .accessibility-features .btn-contrast,
-footer .accessibility-features .btn-borders {
+footer .accessibility-features .btn-borders,
+footer .accessibility-features .btn-reset {
   color: #ffffff;
 }
 footer .accessibility-features .btn-font-size:hover,
 footer .accessibility-features .btn-contrast:hover,
-footer .accessibility-features .btn-borders:hover {
+footer .accessibility-features .btn-borders:hover,
+footer .accessibility-features .btn-reset:hover {
   text-decoration: underline;
   color: #ffffff;
 }

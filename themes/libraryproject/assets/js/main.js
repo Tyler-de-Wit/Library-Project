@@ -172,6 +172,45 @@ function removeBorders() {
 }
 
 
+// Function to reset all accessibility settings
+function resetAccessibilitySettings() {
+    'use strict';
+
+    // Reset font size
+    sessionStorage.setItem("fontSize", "16");
+    rootElement.style.fontSize = "16px";
+
+    // Reset contrast
+    // Set sesion variable to keep state between pages
+    sessionStorage.setItem("contrast", "reset");
+
+    // Remove high contrast class to all elements in page
+    for (let x = 0; x < elements.length; x++) {
+        for (let i = 0; i < elements[x].length; i++) {
+            elements[x][i].classList.remove('light-mode');
+            elements[x][i].classList.remove('dark-mode');
+        }
+    }
+
+    // Reset borders
+    // Set sesion variable to keep state between pages
+    sessionStorage.setItem("borders", "remove");
+
+    // Remove contrast border class to all divs on the page
+    const divs = document.querySelectorAll('div');
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].classList.remove('divs-light-mode-border');
+        divs[i].classList.remove('divs-dark-mode-border');
+    }
+
+    const sections = document.querySelectorAll('section');
+    for (let i = 0; i < sections.length; i++) {
+        sections[i].classList.remove('divs-light-mode-border');
+        sections[i].classList.remove('divs-dark-mode-border');
+    }
+}
+
+
 // -------------------- Scroll to top of page -------------------- //
 // Function to scroll to top of the page
 function scrollToTop() {
@@ -359,6 +398,9 @@ function init() {
     // Change border buttons
     document.getElementById('add-borders-button').addEventListener('click', addBorders);
     document.getElementById('remove-borders-button').addEventListener('click', removeBorders);
+
+    // Reset all accessibility settings
+    document.getElementById('reset-all-button').addEventListener('click', resetAccessibilitySettings);
 
 
     // -------------------- Show More Elements -------------------- //

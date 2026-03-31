@@ -47,8 +47,8 @@
             <!-- Border Buttons -->
             <div class="row">
                 <button class="btn btn-borders col-4" type="button" id="add-borders-button">Add Borders</button>
-                <div class="col-4"></div>
                 <button class="btn btn-borders col-4" type="button" id="remove-borders-button">Remove Borders</button>
+                <button class="btn btn-reset col-4" type="button" id="reset-all-button">Reset All</button>
             </div>
         </section>
     </div>
