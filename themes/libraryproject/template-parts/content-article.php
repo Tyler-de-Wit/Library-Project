@@ -5,7 +5,11 @@
 
         <div>
 
-            <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="Article Header Image" class="article-header-image">
+            <?php if ( has_post_thumbnail() ): ?>
+                <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="Article Header Image" class="article-header-image">
+            <?php else: ?>
+                <img src="<?php echo get_template_directory_uri() . '/assets/images/default-post-thumbnail.jpg'; ?>" alt="Article Header Image" class="article-header-image">
+            <?php endif; ?>
 
             <h1 class="article-header-title"><?php echo get_the_title(); ?></h1>
 
