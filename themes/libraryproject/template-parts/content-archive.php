@@ -17,7 +17,17 @@
     
     <div class="card-body">
 
-        <p class="card-text"><i class="bi bi-calendar me-1"></i><?php echo get_the_date(); ?></p>
+        <p class="card-text">
+            <div>
+                <i class="bi bi-calendar me-1"></i><?php echo get_the_date(); ?>
+            </div>
+            <div>
+                <i class="bi bi-chat me-1"></i><?php echo comments_number(); ?>
+            </div>
+            <div>
+                <i class="bi bi-tags me-1"></i><?php echo the_tags(); ?>
+            </div>
+        </p>
 
         <p class="card-text"><?php echo get_the_excerpt(); ?></p>
 
