@@ -92,7 +92,7 @@
                         <li class="list-group-item"><span class="bold-text"><i class="bi bi-building me-3"></i>Address:</span><br> 63 McLarty Ave, Joondalup WA 6027</li>
                         <li class="list-group-item"><span class="bold-text"><i class="bi bi-telephone me-3"></i>Phone:</span><br> (08) 9233 1005</li>
                         <li class="list-group-item"><span class="bold-text"><i class="bi bi-envelope me-3"></i>Email:</span><br> library@nmtafe.wa.edu.au</li>
-                        <li class="list-group-item"><span class="bold-text"><i class="bi bi-calendar me-3"></i>Hours:</span><br> Monday - Friday 8:00am - 4:00pm</li>
+                        <li class="list-group-item"><span class="bold-text"><i class="bi bi-calendar me-3"></i>Hours:</span><br> Monday - Friday 8:00am - 4:00pm <br><br></li>
                     </ul>
                 </div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1696.5913938727138!2d115.76445393913637!3d-31.738211343528782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2bcd5366ed201307%3A0xafc7647ff5114718!2sNorth%20Metropolitan%20TAFE%20Joondalup%20(McLarty%20Avenue)!5e0!3m2!1sen!2sau!4v1774928835810!5m2!1sen!2sau" width="auto" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
