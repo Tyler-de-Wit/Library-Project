@@ -55,7 +55,7 @@
     </div>
     <!-- Copyright Statement -->
     <div class="mt-3 p-2">
-        <p class="text-center">Copyright 2025 Library Project Team, All Rights Reserved.</p>
+        <p class="text-center">Copyright <?php echo date("Y"); ?> Library Project Team, All Rights Reserved.</p>
     </div>
 </footer>
     
