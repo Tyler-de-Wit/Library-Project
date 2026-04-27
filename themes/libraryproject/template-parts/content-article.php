@@ -17,17 +17,17 @@
 
         <p class="article-header-updated-date">Posted On <?php the_date(); ?></p>
 
-        <p class="article-header-comments-number">
+        <!-- <p class="article-header-comments-number">
             <?php 
 
-                if (get_comments_number() == 1) {
-                    echo '<a href="#comments-section">1 Comment</a>';
-                } else {
-                    echo '<a href="#comments-section">' . get_comments_number() . ' Comments</a>';
-                }
+                // if (get_comments_number() == 1) {
+                //     echo '<a href="#comments-section">1 Comment</a>';
+                // } else {
+                //     echo '<a href="#comments-section">' . get_comments_number() . ' Comments</a>';
+                // }
 
             ?>
-        </p>
+        </p> -->
         
     </div>
 
