@@ -6,10 +6,10 @@
             <h2>Quick Links</h2>
             <ul>
                 <li><a href="<?php echo get_home_url(); ?>">Home</a></li>
-                <li><a href="frequently-asked-questions">FAQ</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li><a href="sitemap">Sitemap</a></li>
-                <li><a href="articles">Articles</a></li>
+                <li><a href="<?php echo get_home_url(); ?>/frequently-asked-questions">FAQ</a></li>
+                <li><a href="<?php echo get_home_url(); ?>/contact">Contact</a></li>
+                <li><a href="<?php echo get_home_url(); ?>/sitemap">Sitemap</a></li>
+                <li><a href="<?php echo get_home_url(); ?>/articles">Articles</a></li>
             </ul>
         </section>
         <!-- Contacts -->
