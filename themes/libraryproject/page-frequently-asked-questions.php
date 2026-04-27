@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
 <main id="main">
+    <h1 class="mb-5 text-center">Frequently Asked Questions</h1>
+
     <div class="container mt-5">
         <div class="row">
 
