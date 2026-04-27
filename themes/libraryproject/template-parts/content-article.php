@@ -39,10 +39,10 @@
 
     </div>
 
-    <section class="article-comments" id="comments-section">
+    <!-- <section class="article-comments" id="comments-section">
 
-        <?php comments_template(); ?>
+        <?php //comments_template(); ?>
 
-    </section>
+    </section> -->
 
 </main>
