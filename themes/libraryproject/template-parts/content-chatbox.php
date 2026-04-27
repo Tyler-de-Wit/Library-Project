@@ -1,7 +1,7 @@
 
 <div class="chatbox-container">
     
-    <h3 class="chatbox-header">Chat Box</h3>
+    <p class="chatbox-header">Chat Box</p>
 
     <div class="chatbox-messages">
 
