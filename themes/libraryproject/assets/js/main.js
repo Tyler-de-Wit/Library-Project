@@ -25,7 +25,7 @@ if (sessionKeyFontSize === null) {
 
 // Function to increase root font size
 function increaseFontSize() {
-    'use strict'
+    'use strict';
 
     let fontSize = sessionStorage.getItem("fontSize");
     fontSize = Number(fontSize);
@@ -39,7 +39,7 @@ function increaseFontSize() {
 
 // Function to decrease root font size
 function decreaseFontSize() {
-    'use strict'
+    'use strict';
 
     let fontSize = sessionStorage.getItem("fontSize");
     fontSize = Number(fontSize);
@@ -53,7 +53,7 @@ function decreaseFontSize() {
 
 // Function to reset root font size
 function resetFontSize() {
-    'use strict'
+    'use strict';
 
     sessionStorage.setItem("fontSize", "16");
     rootElement.style.fontSize = "16px";
@@ -62,7 +62,7 @@ function resetFontSize() {
 
 // Function to increase contrast to light mode
 function lightMode() {
-    'use strict'
+    'use strict';
 
     // Set sesion variable to keep state between pages
     sessionStorage.setItem("contrast", "light");
@@ -78,7 +78,7 @@ function lightMode() {
 
 // Function to increase contrast to dark mode
 function darkMode() {
-    'use strict'
+    'use strict';
 
     // Set sesion variable to keep state between pages
     sessionStorage.setItem("contrast", "dark");
@@ -101,7 +101,7 @@ function darkMode() {
 
 // Function to reset colour contrast to defaults
 function resetContrast() {
-    'use strict'
+    'use strict';
 
     // Set sesion variable to keep state between pages
     sessionStorage.setItem("contrast", "reset");
@@ -118,7 +118,7 @@ function resetContrast() {
 
 // Function to add borders to all divs
 function addBorders() {
-    'use strict'
+    'use strict';
 
     // Set sesion variable to keep state between pages
     sessionStorage.setItem("borders", "add");
@@ -344,7 +344,7 @@ function init() {
     let scrollToTopButton = document.getElementById("scroll-to-top-button");
 
     // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () { showScrollButton() };
+    window.onscroll = function () { showScrollButton(); };
 
     function showScrollButton() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
