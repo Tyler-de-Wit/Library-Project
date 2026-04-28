@@ -21,9 +21,9 @@
             <div>
                 <i class="bi bi-calendar me-1"></i><?php echo get_the_date(); ?>
             </div>
-            <div>
+            <!-- <div>
                 <i class="bi bi-chat me-1"></i><?php echo comments_number(); ?>
-            </div>
+            </div> -->
             <div>
                 <i class="bi bi-tags me-1"></i><?php echo the_tags(); ?>
             </div>
