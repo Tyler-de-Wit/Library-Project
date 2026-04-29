@@ -88,9 +88,13 @@
             
             <!-- Row 3 -->
             <div class="col">
-                <div class="button-icon-navigation text-center">
+                <!-- <div class="button-icon-navigation text-center">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pen-icon.png" alt="Pen Icon">
                     <a href="https://www.mybib.com/tools/apa-citation-generator" target="_blank">APA Citation Generator</a>
+                </div> -->
+                <div class="button-icon-navigation text-center">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/document-icon.png" alt="Document  Icon">
+                    <a href="https://guides.dtwd.wa.gov.au/nmtafe-library" target="_blank">Library Services</a>
                 </div>
             </div>
             <div class="col">
@@ -206,10 +210,10 @@
                 </div>
             </div>
             <div class="col hidden-elements hidden">
-                <div class="button-icon-navigation text-center">
+                <!-- <div class="button-icon-navigation text-center">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/document-icon.png" alt="Document  Icon">
                     <a href="https://guides.dtwd.wa.gov.au/nmtafe-library" target="_blank">Library Services</a>
-                </div>
+                </div> -->
             </div>
 
             <!-- WordPress Dynamic Links -->
