@@ -1,5 +1,5 @@
 // Import page data from JSON file
-import chatboxPages from './chatbox-pages.json';
+import chatboxPages from './chatbox-pages.json' with { type: 'json' };
 
 
 // Create object for chat messages
