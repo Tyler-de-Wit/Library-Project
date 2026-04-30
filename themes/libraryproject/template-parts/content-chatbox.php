@@ -16,6 +16,14 @@
 
     </form>
 
-    <button class="button clear-chat-button">Clear Chat</button>
+    <div class="chatbox-buttons">
+
+        <button class="button clear-chat-button">Clear Chat</button>
+    
+        <button class="button close-chatbox-button" type="button" data-bs-toggle="collapse" data-bs-target="#rightMenu" aria-controls="rightMenu" aria-expanded="false" aria-label="Toggle navigation">
+            Close Chat Box
+        </button>
+
+    </div>
 
 </div>

@@ -160,7 +160,11 @@ main {
   font-size: 1rem;
   font-weight: bold;
 }
-.chatbox-container .clear-chat-button {
+.chatbox-container .chatbox-buttons {
+  display: flex;
+}
+.chatbox-container .chatbox-buttons .clear-chat-button,
+.chatbox-container .chatbox-buttons .close-chatbox-button {
   background-color: #ffffff;
   display: block;
   margin: 1.5rem auto;
