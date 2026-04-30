@@ -9,7 +9,8 @@
 
     <form class="chatbox-input-form" id="chatbox-form">
 
-        <input type="text" class="chatbox-input" placeholder="What are you looking for?">
+        <label for="chatbox-text-input" class="fw-bold">Message:</label>
+        <input type="text" class="chatbox-input" id="chatbox-text-input" placeholder="What are you looking for?">
 
         <button type="submit" class="button send-button">Send</button>
 
