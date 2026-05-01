@@ -4,9 +4,9 @@
     <div class="card-header">
 
         <?php if ( has_post_thumbnail() ): ?>
-            <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" class="card-img-top mb-2 mt-2" alt="Blog Post Thumbnail" height="250" width="auto">
+            <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" class="card-img-top mb-2 mt-2" alt="Blog Post Thumbnail" height="300" width="auto">
         <?php else: ?>
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/default-post-thumbnail.jpg'; ?>" class="card-img-top mb-2 mt-2" alt="Blog Post Thumbnail" height="250" width="auto">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/default-post-thumbnail.jpg'; ?>" class="card-img-top mb-2 mt-2" alt="Blog Post Thumbnail" height="300" width="auto">
         <?php endif; ?>
 
         <a href="<?php the_permalink(); ?>" class="text-reset text-decoration-none">
