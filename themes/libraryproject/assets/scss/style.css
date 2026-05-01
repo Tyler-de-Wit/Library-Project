@@ -570,6 +570,12 @@ footer .accessibility-features .btn-reset:hover {
   text-decoration: underline;
   color: #ffffff;
 }
+footer .accessibility-features .btn-font-size:focus,
+footer .accessibility-features .btn-contrast:focus,
+footer .accessibility-features .btn-borders:focus,
+footer .accessibility-features .btn-reset:focus {
+  border: 1px solid #8f8f8f;
+}
 
 @media screen and (max-width: 991px) {
   footer section {

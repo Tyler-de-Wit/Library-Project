@@ -745,6 +745,10 @@ footer {
                 text-decoration: underline;
                 color: variables.$lightText;
             }
+
+            &:focus {
+                border: 1px solid variables.$darkGray;
+            }
         }
     }
 
