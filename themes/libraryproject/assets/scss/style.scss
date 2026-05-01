@@ -361,14 +361,16 @@ main {
         .article-header-title {
             color: variables.$lightText;
             position: absolute;
-            bottom: 5rem;
+            // bottom: 5rem; //Spacing for when comments count is included
+            bottom: 3rem;
             left: 2rem;
         }
 
         .article-header-updated-date {
             color: variables.$lightText;
             position: absolute;
-            bottom: 3rem;
+            // bottom: 3rem;  //Spacing for when comments count is included
+            bottom: 1rem;
         }
 
         .article-header-comments-number {

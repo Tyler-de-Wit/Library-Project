@@ -290,13 +290,13 @@ main {
 .article-main .article-header .article-header-title {
   color: #ffffff;
   position: absolute;
-  bottom: 5rem;
+  bottom: 3rem;
   left: 2rem;
 }
 .article-main .article-header .article-header-updated-date {
   color: #ffffff;
   position: absolute;
-  bottom: 3rem;
+  bottom: 1rem;
 }
 .article-main .article-header .article-header-comments-number {
   position: absolute;
