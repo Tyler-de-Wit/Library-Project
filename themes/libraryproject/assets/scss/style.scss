@@ -633,9 +633,14 @@ header {
 
         .navbar-toggler {
             background-color: variables.$white;
+            border: 3px solid variables.$black;
 
             &:hover {
                 text-decoration: underline;
+            }
+
+            &:focus {
+                border: 3px solid variables.$primary;
             }
         }
 
