@@ -111,10 +111,10 @@ main {
   flex-direction: column;
   border: 1px solid #000000;
 }
-.chatbox-container .message:nth-child(even) {
+.chatbox-container .message:nth-child(odd) {
   background-color: #ff4e51;
 }
-.chatbox-container .message:nth-child(odd) {
+.chatbox-container .message:nth-child(even) {
   background-color: #276df9;
 }
 .chatbox-container .message .message-sender {

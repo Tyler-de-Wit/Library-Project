@@ -137,11 +137,11 @@ main {
         flex-direction: column;
         border: 1px solid variables.$black;
 
-        &:nth-child(even) {
+        &:nth-child(odd) {
             background-color: variables.$primary;
         }
 
-        &:nth-child(odd) {
+        &:nth-child(even) {
             background-color: variables.$secondary;
         }
 

@@ -2,6 +2,10 @@
 import chatboxPages from './chatbox-pages.json' with { type: 'json' };
 
 
+// User hints message
+const userHintsMessage = 'Hello, you can use this chatbox to search through all the information on this site. You can try searching for things like "How do I setup Microsoft 365", "How can I connect to the campus Wi-Fi", "What is my default password", "How do I log into Blackboard" among many others.';
+
+
 // Create object for chat messages
 const chatMessagesObject = {
     sender: [],
@@ -56,12 +60,12 @@ function createAutomatedResponse() {
             if (userInput.includes(pageData.queries[i])) {
 
                 if (pageId === "other" && automatedMessage === "") { // If all pages are searched and none matched then set fallback message
-                    automatedMessage = "Sorry, We can't seem to find a page that matches your query. You can try visiting our <a href='sitemap'>Sitemap</a> page for a full list of pages on this website";
+                    automatedMessage = "Sorry, We can't seem to find a page that matches your query. You can try visiting our <a href='sitemap'>Sitemap</a> page for a full list of pages on this website.";
                 } else if (pageId === "other") { // If some pages matched query then also add the sitemap page to end of message
-                    automatedMessage += `Also you could take a look at our <a href="${pageData.pageLink}">${pageData.pageTitle}</a> page for a full list of pages and information available on this site<br>`;
+                    automatedMessage += `Also you could take a look at our <a href="${pageData.pageLink}">${pageData.pageTitle}</a> page for a full list of pages and information available on this site.<br>`;
                     break;
                 } else { // Append all pages to output message that match the query
-                    automatedMessage += `You should visit our <a href="${pageData.pageLink}">${pageData.pageTitle}</a> page to learn more<br>`;
+                    automatedMessage += `You should visit our <a href="${pageData.pageLink}">${pageData.pageTitle}</a> page to learn more.<br>`;
                 }
             }
         }
@@ -127,6 +131,9 @@ function clearChat() {
 
     // Clear session variable
     sessionStorage.removeItem('conversation');
+
+    // Output hints for the user to start the conversation
+    outputMessage('Library', userHintsMessage, getTime());
 }
 
 
@@ -149,6 +156,19 @@ function getTime() {
 function init() {
     'use strict';
 
+    const sessionConversationString = sessionStorage.getItem('conversation');
+    const sessionConversationObject = JSON.parse(sessionConversationString);
+
+    // Output hints for the user if there is no previous conversation so that the hints will be first in the conversation
+    if (sessionConversationObject === null) {
+        outputMessage('Library', userHintsMessage, getTime());
+    }
+    
+    // Runs fillPreviousConversation if previous conversation is stored in session varaible
+    if (sessionConversationObject !== null) {
+        fillPreviousConversation(sessionConversationObject);
+    }
+
     try {
         // Scroll to bottom of the chats when chatbox is opened so user can see the most recent ones
         document.getElementById('right-menu-toggler').addEventListener('click', () => {
@@ -170,14 +190,6 @@ function init() {
         document.querySelector('.clear-chat-button').addEventListener('click', clearChat);
     } catch (error) {
         console.log(error);
-    }
-
-
-    // Runs fillPreviousConversation if previous conversation is stored in session varaible
-    const sessionConversationString = sessionStorage.getItem('conversation');
-    const sessionConversationObject = JSON.parse(sessionConversationString);
-    if (sessionConversationObject !== null) {
-        fillPreviousConversation(sessionConversationObject);
     }
 }
 
