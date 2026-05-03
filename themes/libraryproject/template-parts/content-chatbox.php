@@ -16,6 +16,8 @@
 
     </form>
 
+    <p class="m-0">Note: Your message must be between 2 and 200 characters.</p>
+
     <div class="chatbox-buttons">
 
         <button class="button clear-chat-button">Clear Chat</button>

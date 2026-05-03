@@ -180,7 +180,7 @@ function init() {
             receiveMessage(event);
 
             // Run functions to output the user message and then generate a response
-            if (getUserInput() !== '') {
+            if (getUserInput() !== '' && getUserInput().length > 2 && getUserInput().length < 200 ) {
                 outputMessage('You', getUserInput(), getTime());
                 createAutomatedResponse();
             }
