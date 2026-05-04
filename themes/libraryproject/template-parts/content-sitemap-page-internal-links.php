@@ -14,9 +14,9 @@
         
             $image_url = get_image_url_from_slug( $current_posts_slug . '-icon' );
             if ( $image_url ) {
-                echo '<img src="' . esc_url( $image_url ) . '" alt="' . $current_posts_slug . '-icon' . '" width="29">';
+                echo '<img src="' . esc_url( $image_url ) . '" alt="' . $current_posts_slug . '-icon' . '" width="40" class="site-icon">';
             } else {
-                echo '<img src="' . get_template_directory_uri() . '/assets/images/document-icon.png' . '" alt="Document Icon" width="29">';
+                echo '<img src="' . get_template_directory_uri() . '/assets/images/document-icon.png' . '" alt="Document Icon" width="40" class="site-icon">';
             }
         ?>
 

@@ -34,6 +34,13 @@ main {
     min-height: 95vh;
 }
 
+// Global styling for icons on the site
+.site-icon {
+    background-color: variables.$white;
+    padding: 4px;
+    border-radius: 4px;
+}
+
 // Skip link
 .skip-link {
     position: fixed;

@@ -11,13 +11,13 @@
 
             <div class="col">
                 <div class="text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/frequently-asked-questions-icon.png" alt="Question Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/frequently-asked-questions-icon.png" alt="Question Icon" width="40" class="site-icon">
                     <a href="frequently-asked-questions">Frequently Asked Questions</a>
                 </div>
             </div>
             <div class="col">
                 <div class="text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/contact-icon.png" alt="Mail Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/contact-icon.png" alt="Mail Icon" width="40" class="site-icon">
                     <a href="contact">Contact</a>
                 </div>
             </div>
@@ -61,13 +61,13 @@
             <!-- Row 1 -->
             <div class="col">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/blackboard-icon.png" alt="Person Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/blackboard-icon.png" alt="Person Icon" width="40" class="site-icon">
                     <a href="https://help.blackboard.com/" target="_blank">Blackboard Help</a>
                 </div>
             </div>
             <div class="col">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/wifi-icon.png" alt="WiFi Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/wifi-icon.png" alt="WiFi Icon" width="40" class="site-icon">
                     <a href="http://neverssl.com/" target="_blank">NMT WiFi login page</a>
                 </div>
             </div>
@@ -75,13 +75,13 @@
             <!-- Row 2 -->
             <div class="col">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/blackboard-icon.png" alt="Person Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/blackboard-icon.png" alt="Person Icon" width="40" class="site-icon">
                     <a href="https://help.blackboard.com/Collaborate/Ultra/Participant" target="_blank">Collaborate Help For Students</a>
                 </div>
             </div>
             <div class="col">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/wifi-icon.png" alt="WiFi Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/wifi-icon.png" alt="WiFi Icon" width="40" class="site-icon">
                     <a href="https://northmetrotafe.libanswers.com/faq/269162" target="_blank">How do I login to the Campus WiFi?</a>
                 </div>
             </div>
@@ -89,17 +89,17 @@
             <!-- Row 3 -->
             <div class="col">
                 <!-- <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/pen-icon.png" alt="Pen Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/pen-icon.png" alt="Pen Icon" width="40" class="site-icon">
                     <a href="https://www.mybib.com/tools/apa-citation-generator" target="_blank">APA Citation Generator</a>
                 </div> -->
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/document-icon.png" alt="Document  Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/document-icon.png" alt="Document  Icon" width="40" class="site-icon">
                     <a href="https://guides.dtwd.wa.gov.au/nmtafe-library" target="_blank">Library Services</a>
                 </div>
             </div>
             <div class="col">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/printers-icon.png" alt="Printer Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/printers-icon.png" alt="Printer Icon" width="40" class="site-icon">
                     <a href="https://northmetrotafe.libanswers.com/faq/277356" target="_blank">Print using your own device with Mobility Print</a>
                 </div>
             </div>
@@ -107,13 +107,13 @@
             <!-- Row 4 -->
             <div class="col hidden-elements hidden">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/pen-icon.png" alt="Pen Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/pen-icon.png" alt="Pen Icon" width="40" class="site-icon">
                     <a href="https://guides.dtwd.wa.gov.au/nmtafe-apa" target="_blank">APA Referencing Guide</a>
                 </div>
             </div>
             <div class="col hidden-elements hidden">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/printers-icon.png" alt="Printer Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/printers-icon.png" alt="Printer Icon" width="40" class="site-icon">
                     <a href="https://northmetrotafe.libanswers.com/faq/264857" target="_blank">How do I print, photocopy or scan?</a>
                 </div>
             </div>
@@ -121,13 +121,13 @@
             <!-- Row 5 -->
             <div class="col hidden-elements hidden">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/timetable-icon.png" alt="Timetable Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/timetable-icon.png" alt="Timetable Icon" width="40" class="site-icon">
                     <a href="https://www.northmetrotafe.wa.edu.au/timetables" target="_blank">North Metropolitan Tafe Timetables</a>
                 </div>
             </div>
             <div class="col hidden-elements hidden">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/printers-icon.png" alt="Printer Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/printers-icon.png" alt="Printer Icon" width="40" class="site-icon">
                     <a href="https://print.nmtafe.wa.edu.au/user" target="_blank">PaperCut MF</a>
                 </div>
             </div>
@@ -135,13 +135,13 @@
             <!-- Row 6 -->
             <div class="col hidden-elements hidden">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/graduation-icon.png" alt="Graduation Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/graduation-icon.png" alt="Graduation Icon" width="40" class="site-icon">
                     <a href="https://guides.dtwd.wa.gov.au/nmtafe-library/newstudents" target="_blank">New Students</a>
                 </div>
             </div>
             <div class="col hidden-elements hidden">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/globe-icon.png" alt="Globe Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/globe-icon.png" alt="Globe Icon" width="40" class="site-icon">
                     <a href="https://guides.dtwd.wa.gov.au/az/northmetro" target="_blank">Online Resources</a>
                 </div>
             </div>
@@ -149,13 +149,13 @@
             <!-- Row 7 -->
             <div class="col hidden-elements hidden">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/student-portal-icon.png" alt="Student Portal Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/student-portal-icon.png" alt="Student Portal Icon" width="40" class="site-icon">
                     <a href="https://nmtafe.t1cloud.com/T1Default/CiAnywhere/web/NMTAFE/LogOn/$S1_STU" target="_blank">Student Portal</a>
                 </div>
             </div>
             <div class="col hidden-elements hidden">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/contact-icon.png" alt="Mail Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/contact-icon.png" alt="Mail Icon" width="40" class="site-icon">
                     <a href="https://guides.dtwd.wa.gov.au/nmtafe-library/ContactUs" target="_blank">Contact information for every campus library</a>
                 </div>
             </div>
@@ -163,13 +163,13 @@
             <!-- Row 8 -->
             <div class="col hidden-elements hidden">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/microsoft-365-icon.png" alt="Computer Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/microsoft-365-icon.png" alt="Computer Icon" width="40" class="site-icon">
                     <a href="https://login.microsoftonline.com/" target="_blank">Login To Microsoft 365</a>
                 </div>
             </div>
             <div class="col hidden-elements hidden">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/microsoft-365-icon.png" alt="Computer Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/microsoft-365-icon.png" alt="Computer Icon" width="40" class="site-icon">
                     <a href="https://passwordreset.microsoftonline.com" target="_blank">Reset your Microsoft password</a>
                 </div>
             </div>
@@ -177,13 +177,13 @@
             <!-- Row 9 -->
             <div class="col hidden-elements hidden">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/microsoft-365-icon.png" alt="Computer Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/microsoft-365-icon.png" alt="Computer Icon" width="40" class="site-icon">
                     <a href="https://support.microsoft.com/en-us/microsoft-365" target="_blank">Microsoft Support</a>
                 </div>
             </div>
             <div class="col hidden-elements hidden">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/microsoft-365-icon.png" alt="Computer Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/microsoft-365-icon.png" alt="Computer Icon" width="40" class="site-icon">
                     <a href="https://northmetrotafe.libanswers.com/faq/269161" target="_blank">FAQ How do I access my Microsoft 365 / Student Email?</a>
                 </div>
             </div>
@@ -191,13 +191,13 @@
             <!-- Row 10 -->
             <div class="col hidden-elements hidden">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/microsoft-365-icon.png" alt="Computer Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/microsoft-365-icon.png" alt="Computer Icon" width="40" class="site-icon">
                     <a href="https://apps.apple.com/au/app/microsoft-authenticator/id983156458" target="_blank">Download Microsoft authenticator for Apple</a>
                 </div>
             </div>
             <div class="col hidden-elements hidden">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/microsoft-365-icon.png" alt="Computer Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/microsoft-365-icon.png" alt="Computer Icon" width="40" class="site-icon">
                     <a href="https://play.google.com/store/apps/details?id=com.azure.authenticator&hl=en_AU" target="_blank">Download Microsoft authenticator for Android</a>
                 </div>
             </div>
@@ -205,13 +205,13 @@
             <!-- Row 11 -->
             <div class="col hidden-elements hidden">
                 <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/microsoft-365-icon.png" alt="Computer Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/microsoft-365-icon.png" alt="Computer Icon" width="40" class="site-icon">
                     <a href="https://northmetrotafe.libanswers.com/faq/275738" target="_blank">MFA and Microsoft365 Setup in Languages Other than English</a>
                 </div>
             </div>
             <div class="col hidden-elements hidden">
                 <!-- <div class="button-icon-navigation text-center">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/document-icon.png" alt="Document  Icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/document-icon.png" alt="Document  Icon" width="40" class="site-icon">
                     <a href="https://guides.dtwd.wa.gov.au/nmtafe-library" target="_blank">Library Services</a>
                 </div> -->
             </div>

@@ -25,6 +25,12 @@ main {
   min-height: 95vh;
 }
 
+.site-icon {
+  background-color: #ffffff;
+  padding: 4px;
+  border-radius: 4px;
+}
+
 .skip-link {
   position: fixed;
   top: 0;
