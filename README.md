@@ -11,6 +11,8 @@ The icons that appear in the hamburger menu and on the button links on the home 
 
 The fallback icon is for when a new post is created and therefore added to menus throughout the site, but an icon isn't uploaded or the icons name is incorrect. It will then display the fallback icon instead of displaying nothing. The naming convention for these icons is the pages name (slug) with -icon on the end. For example, the disability support page’s icon should be called “disability-support-icon.png”
 
+There are 5 icons which are stored in the themes assets/images folder which are pulled directly from there for use in the site. These icons are "default-post-thumbnail.jpg", "document-icon.png", "hamburger-icon.png", "home-page-icon.png" and "search-icon.png". The hamburger and search icon are used in the header on the site to open the hamburger menu and chatbot respectively. The document icon is a fallback icon for anywhere in the site that an icon isn't uploaded through the WordPress backend this will be used. The default-post-thumbnail is also a fallback image however this one will be used for when a post thumbnail image isn't uploaded. The home-page-icon is for the home page link in the hamburger menu. 
+
 ## Creating New Posts
 There is no specific formatting required for writing a new article page (post) the only requirements being that h2 should be used for the main articles headings as they are automatically styled with the black background. 
 
