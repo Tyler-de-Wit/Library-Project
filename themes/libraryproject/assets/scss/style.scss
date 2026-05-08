@@ -124,7 +124,7 @@ main {
     background: variables.$gray;
     border-radius: 0rem 0rem 0.5rem 0.5rem;
     padding: 1rem;
-    height: 38rem;
+    min-height: 38rem;
     max-width: 40rem;
     margin: auto;
     box-shadow: 0px 1px 4px 0px variables.$black;
