@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?php echo get_the_title() . ' | North Metropolitan Tafe Library'; ?>
+        <?php 
+            $title = single_post_title('', false);
+
+            if($title == null) {
+                echo 'Queried Posts | North Metropolitan Tafe Library';
+            } else {
+                echo $title . ' | North Metropolitan Tafe Library';
+            }
+        ?>
     </title>
 
     <?php
