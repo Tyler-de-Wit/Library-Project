@@ -117,59 +117,59 @@ function resetContrast() {
 
 
 // Function to add borders to all divs
-function addBorders() {
-    'use strict';
+// function addBorders() {
+//     'use strict';
 
-    // Set sesion variable to keep state between pages
-    sessionStorage.setItem("borders", "add");
+//     // Set sesion variable to keep state between pages
+//     sessionStorage.setItem("borders", "add");
 
-    // Add contrast border class to all divs and sections on the page
-    const divs = document.querySelectorAll('div');
-    for (let i = 0; i < divs.length; i++) {
+//     // Add contrast border class to all divs and sections on the page
+//     const divs = document.querySelectorAll('div');
+//     for (let i = 0; i < divs.length; i++) {
 
-        // Test if the page is in light or dark mode to add the correct border
-        if (sessionStorage.getItem("contrast") == "light") {
-            divs[i].classList.add('divs-light-mode-border');
-        } else if (sessionStorage.getItem("contrast") == "dark") {
-            divs[i].classList.add('divs-dark-mode-border');
-        } else {
-            divs[i].classList.add('divs-light-mode-border');
-        }
-    }
+//         // Test if the page is in light or dark mode to add the correct border
+//         if (sessionStorage.getItem("contrast") == "light") {
+//             divs[i].classList.add('divs-light-mode-border');
+//         } else if (sessionStorage.getItem("contrast") == "dark") {
+//             divs[i].classList.add('divs-dark-mode-border');
+//         } else {
+//             divs[i].classList.add('divs-light-mode-border');
+//         }
+//     }
 
-    const sections = document.querySelectorAll('section');
-    for (let i = 0; i < sections.length; i++) {
-        // Test if the page is in light or dark mode to add the correct border
-        if (sessionStorage.getItem("contrast") == "light") {
-            sections[i].classList.add('divs-light-mode-border');
-        } else if (sessionStorage.getItem("contrast") == "dark") {
-            sections[i].classList.add('divs-dark-mode-border');
-        } else {
-            sections[i].classList.add('divs-light-mode-border');
-        }
-    }
-}
+//     const sections = document.querySelectorAll('section');
+//     for (let i = 0; i < sections.length; i++) {
+//         // Test if the page is in light or dark mode to add the correct border
+//         if (sessionStorage.getItem("contrast") == "light") {
+//             sections[i].classList.add('divs-light-mode-border');
+//         } else if (sessionStorage.getItem("contrast") == "dark") {
+//             sections[i].classList.add('divs-dark-mode-border');
+//         } else {
+//             sections[i].classList.add('divs-light-mode-border');
+//         }
+//     }
+// }
 
 // Function to remove borders from all divs
-function removeBorders() {
-    'use strict';
+// function removeBorders() {
+//     'use strict';
 
-    // Set sesion variable to keep state between pages
-    sessionStorage.setItem("borders", "remove");
+//     // Set sesion variable to keep state between pages
+//     sessionStorage.setItem("borders", "remove");
 
-    // Remove contrast border class to all divs on the page
-    const divs = document.querySelectorAll('div');
-    for (let i = 0; i < divs.length; i++) {
-        divs[i].classList.remove('divs-light-mode-border');
-        divs[i].classList.remove('divs-dark-mode-border');
-    }
+//     // Remove contrast border class to all divs on the page
+//     const divs = document.querySelectorAll('div');
+//     for (let i = 0; i < divs.length; i++) {
+//         divs[i].classList.remove('divs-light-mode-border');
+//         divs[i].classList.remove('divs-dark-mode-border');
+//     }
 
-    const sections = document.querySelectorAll('section');
-    for (let i = 0; i < sections.length; i++) {
-        sections[i].classList.remove('divs-light-mode-border');
-        sections[i].classList.remove('divs-dark-mode-border');
-    }
-}
+//     const sections = document.querySelectorAll('section');
+//     for (let i = 0; i < sections.length; i++) {
+//         sections[i].classList.remove('divs-light-mode-border');
+//         sections[i].classList.remove('divs-dark-mode-border');
+//     }
+// }
 
 
 // Function to reset all accessibility settings
@@ -194,20 +194,20 @@ function resetAccessibilitySettings() {
 
     // Reset borders
     // Set sesion variable to keep state between pages
-    sessionStorage.setItem("borders", "remove");
+    // sessionStorage.setItem("borders", "remove");
 
-    // Remove contrast border class to all divs on the page
-    const divs = document.querySelectorAll('div');
-    for (let i = 0; i < divs.length; i++) {
-        divs[i].classList.remove('divs-light-mode-border');
-        divs[i].classList.remove('divs-dark-mode-border');
-    }
+    // // Remove contrast border class to all divs on the page
+    // const divs = document.querySelectorAll('div');
+    // for (let i = 0; i < divs.length; i++) {
+    //     divs[i].classList.remove('divs-light-mode-border');
+    //     divs[i].classList.remove('divs-dark-mode-border');
+    // }
 
-    const sections = document.querySelectorAll('section');
-    for (let i = 0; i < sections.length; i++) {
-        sections[i].classList.remove('divs-light-mode-border');
-        sections[i].classList.remove('divs-dark-mode-border');
-    }
+    // const sections = document.querySelectorAll('section');
+    // for (let i = 0; i < sections.length; i++) {
+    //     sections[i].classList.remove('divs-light-mode-border');
+    //     sections[i].classList.remove('divs-dark-mode-border');
+    // }
 }
 
 
@@ -388,15 +388,15 @@ function init() {
 
 
     // Run add or remove border functions based on state of session varaible
-    if (sessionStorage.getItem("borders") == "add") {
-        addBorders();
-    } else if (sessionStorage.getItem("borders") == "remove") {
-        removeBorders();
-    }
+    // if (sessionStorage.getItem("borders") == "add") {
+    //     addBorders();
+    // } else if (sessionStorage.getItem("borders") == "remove") {
+    //     removeBorders();
+    // }
 
     // Change border buttons
-    document.getElementById('add-borders-button').addEventListener('click', addBorders);
-    document.getElementById('remove-borders-button').addEventListener('click', removeBorders);
+    // document.getElementById('add-borders-button').addEventListener('click', addBorders);
+    // document.getElementById('remove-borders-button').addEventListener('click', removeBorders);
 
     // Reset all accessibility settings
     document.getElementById('reset-all-button').addEventListener('click', resetAccessibilitySettings);

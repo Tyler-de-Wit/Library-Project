@@ -42,15 +42,15 @@
             <div class="row">
                 <button class="btn btn-contrast col-4" type="button" id="light-mode-button">Light Mode</button>
                 <button class="btn btn-contrast col-4" type="button" id="dark-mode-button">Dark Mode</button>
-                <button class="btn btn-contrast col-4" type="button" id="decrease-contrast-button">Reset Contrast</button>
+                <button class="btn btn-reset col-4" type="button" id="reset-all-button">Reset All</button>
+                <!-- <button class="btn btn-contrast col-4" type="button" id="decrease-contrast-button">Reset Contrast</button> -->
             </div>
 
             <!-- Border Buttons -->
-            <div class="row">
+            <!-- <div class="row">
                 <button class="btn btn-borders col-4" type="button" id="add-borders-button">Add Borders</button>
                 <button class="btn btn-borders col-4" type="button" id="remove-borders-button">Remove Borders</button>
-                <button class="btn btn-reset col-4" type="button" id="reset-all-button">Reset All</button>
-            </div>
+            </div> -->
         </section>
     </div>
     <!-- Copyright Statement -->
