@@ -60,23 +60,22 @@ function resetFontSize() {
 }
 
 
-// Function to increase contrast to light mode
+// Function to reset contrast to light mode
 function lightMode() {
     'use strict';
 
     // Set sesion variable to keep state between pages
     sessionStorage.setItem("contrast", "light");
 
-    // Add light mode class to all elements in page
+    // Remove dark-mode class to all elements in page
     for (let x = 0; x < elements.length; x++) {
         for (let i = 0; i < elements[x].length; i++) {
             elements[x][i].classList.remove('dark-mode');
-            elements[x][i].classList.add('light-mode');
         }
     }
 }
 
-// Function to increase contrast to dark mode
+// Function to change contrast to dark mode
 function darkMode() {
     'use strict';
 
@@ -86,7 +85,6 @@ function darkMode() {
     // Add dark mode class to all elements in page
     for (let x = 0; x < elements.length; x++) {
         for (let i = 0; i < elements[x].length; i++) {
-            elements[x][i].classList.remove('light-mode');
             elements[x][i].classList.add('dark-mode');
         }
     }
@@ -98,78 +96,6 @@ function darkMode() {
         navbarTogglers[i].style.setProperty('background-color', '#ffffff', 'important');
     }
 }
-
-// Function to reset colour contrast to defaults
-function resetContrast() {
-    'use strict';
-
-    // Set sesion variable to keep state between pages
-    sessionStorage.setItem("contrast", "reset");
-
-    // Remove high contrast class to all elements in page
-    for (let x = 0; x < elements.length; x++) {
-        for (let i = 0; i < elements[x].length; i++) {
-            elements[x][i].classList.remove('light-mode');
-            elements[x][i].classList.remove('dark-mode');
-        }
-    }
-}
-
-
-// Function to add borders to all divs
-// function addBorders() {
-//     'use strict';
-
-//     // Set sesion variable to keep state between pages
-//     sessionStorage.setItem("borders", "add");
-
-//     // Add contrast border class to all divs and sections on the page
-//     const divs = document.querySelectorAll('div');
-//     for (let i = 0; i < divs.length; i++) {
-
-//         // Test if the page is in light or dark mode to add the correct border
-//         if (sessionStorage.getItem("contrast") == "light") {
-//             divs[i].classList.add('divs-light-mode-border');
-//         } else if (sessionStorage.getItem("contrast") == "dark") {
-//             divs[i].classList.add('divs-dark-mode-border');
-//         } else {
-//             divs[i].classList.add('divs-light-mode-border');
-//         }
-//     }
-
-//     const sections = document.querySelectorAll('section');
-//     for (let i = 0; i < sections.length; i++) {
-//         // Test if the page is in light or dark mode to add the correct border
-//         if (sessionStorage.getItem("contrast") == "light") {
-//             sections[i].classList.add('divs-light-mode-border');
-//         } else if (sessionStorage.getItem("contrast") == "dark") {
-//             sections[i].classList.add('divs-dark-mode-border');
-//         } else {
-//             sections[i].classList.add('divs-light-mode-border');
-//         }
-//     }
-// }
-
-// Function to remove borders from all divs
-// function removeBorders() {
-//     'use strict';
-
-//     // Set sesion variable to keep state between pages
-//     sessionStorage.setItem("borders", "remove");
-
-//     // Remove contrast border class to all divs on the page
-//     const divs = document.querySelectorAll('div');
-//     for (let i = 0; i < divs.length; i++) {
-//         divs[i].classList.remove('divs-light-mode-border');
-//         divs[i].classList.remove('divs-dark-mode-border');
-//     }
-
-//     const sections = document.querySelectorAll('section');
-//     for (let i = 0; i < sections.length; i++) {
-//         sections[i].classList.remove('divs-light-mode-border');
-//         sections[i].classList.remove('divs-dark-mode-border');
-//     }
-// }
 
 
 // Function to reset all accessibility settings
@@ -184,30 +110,12 @@ function resetAccessibilitySettings() {
     // Set sesion variable to keep state between pages
     sessionStorage.setItem("contrast", "reset");
 
-    // Remove high contrast class to all elements in page
+    // Remove dark-mode class to all elements in page
     for (let x = 0; x < elements.length; x++) {
         for (let i = 0; i < elements[x].length; i++) {
-            elements[x][i].classList.remove('light-mode');
             elements[x][i].classList.remove('dark-mode');
         }
     }
-
-    // Reset borders
-    // Set sesion variable to keep state between pages
-    // sessionStorage.setItem("borders", "remove");
-
-    // // Remove contrast border class to all divs on the page
-    // const divs = document.querySelectorAll('div');
-    // for (let i = 0; i < divs.length; i++) {
-    //     divs[i].classList.remove('divs-light-mode-border');
-    //     divs[i].classList.remove('divs-dark-mode-border');
-    // }
-
-    // const sections = document.querySelectorAll('section');
-    // for (let i = 0; i < sections.length; i++) {
-    //     sections[i].classList.remove('divs-light-mode-border');
-    //     sections[i].classList.remove('divs-dark-mode-border');
-    // }
 }
 
 
@@ -364,14 +272,11 @@ function init() {
         lightMode();
     } else if (sessionStorage.getItem("contrast") == "dark") {
         darkMode();
-    } else if (sessionStorage.getItem("contrast") == "reset") {
-        resetContrast();
     }
 
     // Change contrast buttons
     document.getElementById('light-mode-button').addEventListener('click', lightMode);
     document.getElementById('dark-mode-button').addEventListener('click', darkMode);
-    document.getElementById('decrease-contrast-button').addEventListener('click', resetContrast);
 
     // Set the font size for a new page based on the value set in the session variable from a previous page
     const sessionKeyFontSize = sessionStorage.getItem("fontSize");
@@ -385,18 +290,6 @@ function init() {
     document.getElementById('increase-font-size-button').addEventListener('click', increaseFontSize);
     document.getElementById('decrease-font-size-button').addEventListener('click', decreaseFontSize);
     document.getElementById('reset-font-size-button').addEventListener('click', resetFontSize);
-
-
-    // Run add or remove border functions based on state of session varaible
-    // if (sessionStorage.getItem("borders") == "add") {
-    //     addBorders();
-    // } else if (sessionStorage.getItem("borders") == "remove") {
-    //     removeBorders();
-    // }
-
-    // Change border buttons
-    // document.getElementById('add-borders-button').addEventListener('click', addBorders);
-    // document.getElementById('remove-borders-button').addEventListener('click', removeBorders);
 
     // Reset all accessibility settings
     document.getElementById('reset-all-button').addEventListener('click', resetAccessibilitySettings);
@@ -422,7 +315,6 @@ function init() {
         // Error will be thrown when not on an article page as the div of id 'article-table-of-contents' will not exist
         // console.log(error);
     }
-
 }
 
 
