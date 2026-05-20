@@ -12,6 +12,17 @@ for (let i = 0; i < htmlElements.length; i++) {
     elements.push(selector);
 }
 
+// Array with the class names of the elements which will get their own custom dark mode class added
+const darkModeElements = ['navbar', 'navbar-toggler', 'chatbox-container', 'scroll-to-top-button', 'button-icon-navigation', 'search-form-input', 'search-form-button', 'contact-main', 'main-sitemap-page', 'archive-card', 'pagination', 'article-main'];
+    
+// Build array for dark mode custom classes
+const queriedElementsArray = [];
+for (let i = 0; i < darkModeElements.length; i++) {
+    let selector = '.' + darkModeElements[i];
+    let queriedElements = document.querySelectorAll(selector);
+    queriedElementsArray.push(queriedElements);
+}
+
 // Test if fontSize has been set already in the session as to not override it from another page if it has not been set then set the session variable to 16 and apply it to the page
 const sessionKeyFontSize = sessionStorage.getItem("fontSize");
 if (sessionKeyFontSize === null) {
@@ -73,6 +84,13 @@ function lightMode() {
             elements[x][i].classList.remove('dark-mode');
         }
     }
+
+    // Remove custom element dark mode class from each element
+    for (let x = 0; x < queriedElementsArray.length; x++) {
+        for (let i = 0; i < queriedElementsArray[x].length; i++) {
+            queriedElementsArray[x][i].classList.remove(darkModeElements[x] + '-dark-mode');
+        }
+    }
 }
 
 // Function to change contrast to dark mode
@@ -89,11 +107,11 @@ function darkMode() {
         }
     }
 
-    // Change background of hanburger and search buttons back to white so you can see the dark image
-    let navbarTogglers = [];
-    navbarTogglers = document.querySelectorAll('.navbar-toggler');
-    for (let i = 0; i < navbarTogglers.length; i++) {
-        navbarTogglers[i].style.setProperty('background-color', '#ffffff', 'important');
+    // Add custom element dark mode class from each element
+    for (let x = 0; x < queriedElementsArray.length; x++) {
+        for (let i = 0; i < queriedElementsArray[x].length; i++) {
+            queriedElementsArray[x][i].classList.add(darkModeElements[x] + '-dark-mode');
+        }
     }
 }
 
@@ -114,6 +132,13 @@ function resetAccessibilitySettings() {
     for (let x = 0; x < elements.length; x++) {
         for (let i = 0; i < elements[x].length; i++) {
             elements[x][i].classList.remove('dark-mode');
+        }
+    }
+
+    // Remove custom element dark mode class from each element
+    for (let x = 0; x < queriedElementsArray.length; x++) {
+        for (let i = 0; i < queriedElementsArray[x].length; i++) {
+            queriedElementsArray[x][i].classList.remove(darkModeElements[x] + '-dark-mode');
         }
     }
 }
