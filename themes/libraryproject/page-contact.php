@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- Main -->
-<main class="contact-main container mt-3" id="main">
+<main class="contact-main container mt-3 mb-1" id="main">
     <h1 class="mb-5 text-center">Contact Us</h1>
     
     <div class="row">

@@ -222,22 +222,125 @@ main {
     padding: 0.5rem;
   }
 }
-.light-mode {
-  background-color: #ffffff !important;
-  color: #000000 !important;
-}
-
 .dark-mode {
   background-color: #000000 !important;
   color: #ffffff !important;
 }
 
-.divs-light-mode-border {
-  border: 1px solid #8f8f8f !important;
+.navbar-toggler-dark-mode {
+  background-color: #ffffff !important;
 }
 
-.divs-dark-mode-border {
-  border: 1px solid #f3f3f3 !important;
+.scroll-to-top-button-dark-mode {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+.scroll-to-top-button-dark-mode:hover {
+  background-color: #276df9 !important;
+}
+.scroll-to-top-button-dark-mode:hover i {
+  background-color: #276df9 !important;
+}
+.scroll-to-top-button-dark-mode i {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.button-icon-navigation-dark-mode {
+  border: 1px solid #ffffff !important;
+  box-shadow: 0px 1px 4px 0px #ffffff !important;
+}
+
+.navbar-dark-mode {
+  box-shadow: 0px 1px 1px 0px #ffffff;
+}
+
+.chatbox-container-dark-mode {
+  border: 1px solid #ffffff;
+}
+.chatbox-container-dark-mode .message:nth-child(odd) {
+  background-color: #ff4e51 !important;
+}
+.chatbox-container-dark-mode .message:nth-child(even) {
+  background-color: #276df9 !important;
+}
+.chatbox-container-dark-mode .message .message-sender,
+.chatbox-container-dark-mode .message .message-text,
+.chatbox-container-dark-mode .message .message-timestamp {
+  color: #000000 !important;
+  background-color: inherit !important;
+}
+.chatbox-container-dark-mode .message a {
+  color: #0000ff !important;
+  background-color: inherit !important;
+}
+.chatbox-container-dark-mode .message a:hover {
+  color: #000000 !important;
+}
+.chatbox-container-dark-mode .chatbox-input-form {
+  border-top: 1px solid #ffffff;
+}
+.chatbox-container-dark-mode .chatbox-input-form .chatbox-input {
+  border: 1px solid #ffffff;
+  border-radius: 0px;
+}
+.chatbox-container-dark-mode .button {
+  border: 1px solid #ffffff;
+}
+
+.contact-main-dark-mode .card {
+  border: 1px solid #ffffff !important;
+}
+.contact-main-dark-mode .card .card-header {
+  border-bottom: 1px solid #ffffff !important;
+}
+
+.main-sitemap-page-dark-mode .internal-links,
+.main-sitemap-page-dark-mode .external-links,
+.main-sitemap-page-dark-mode .links-to-pdf-documents {
+  border: 1px solid #ffffff !important;
+  overflow: hidden !important;
+}
+.main-sitemap-page-dark-mode .button-icon-navigation-dark-mode {
+  border: none !important;
+  box-shadow: none !important;
+}
+.main-sitemap-page-dark-mode .wp-block-file__button.wp-element-button {
+  box-shadow: 0px 0px 4px 1px #ffffff !important;
+}
+
+.archive-card-dark-mode {
+  border: 1px solid #ffffff !important;
+  overflow: hidden !important;
+}
+.archive-card-dark-mode .card-header {
+  border-bottom: 1px solid #ffffff !important;
+}
+.archive-card-dark-mode .btn {
+  box-shadow: 0px 0px 4px 1px #ffffff !important;
+  border: none !important;
+}
+
+.pagination-dark-mode .page-numbers {
+  border: 1px solid #ffffff !important;
+}
+.pagination-dark-mode .page-numbers:hover {
+  color: #276df9 !important;
+}
+
+.article-main-dark-mode .article-header-title,
+.article-main-dark-mode .article-header-updated-date {
+  background-color: initial !important;
+}
+.article-main-dark-mode h2 {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+.article-main-dark-mode #article-table-of-contents a {
+  color: #ffffff !important;
+}
+.article-main-dark-mode #article-table-of-contents a:hover {
+  color: #276df9 !important;
 }
 
 .fadeInLeft {
@@ -530,6 +633,7 @@ header nav #leftMenu li a {
 /* -------------------- Footer -------------------- */
 footer {
   background-color: #000000;
+  box-shadow: 0px 0px 3px 0px #ffffff;
 }
 footer .row {
   border-bottom: 1px solid #8f8f8f;
@@ -559,6 +663,11 @@ footer .search-form button {
   border-radius: 4px;
   border: none;
   padding: 0.5rem;
+}
+footer .search-form .search-form-input,
+footer .search-form .search-form-button {
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
 footer .accessibility-features .row {
   border: none;

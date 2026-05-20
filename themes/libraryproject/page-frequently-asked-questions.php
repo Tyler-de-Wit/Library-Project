@@ -8,7 +8,7 @@
 
             <!-- FAQ Microsoft -->
             <div class="col-xl-6 col-sm-12 mb-5">
-                <h2 class="animateRight"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/microsoft-365-icon.png" alt="Computer Icon" class="me-2 mb-1">Microsoft 365 FAQ</h2>
+                <h2 class="animateLeft"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/microsoft-365-icon.png" alt="Computer Icon" class="me-2 mb-1">Microsoft 365 FAQ</h2>
                 <div class="accordion" id="accordionPanelsStayOpenMicrosoft">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -63,7 +63,7 @@
 
             <!-- FAQ Passwords -->
             <div class="col-xl-6 col-sm-12 mb-5">
-                <h2 class="animateRight"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/passwords-icon.png" alt="Passwords Icon" class="me-2 mb-1">Passwords FAQ</h2>
+                <h2 class="animateRight"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/passwords-icon.png" alt="Passwords Icon" class="me-2 mb-1">Passwords FAQ</h2>
                 <div class="accordion" id="accordionPanelsStayOpenPasswords">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -120,7 +120,7 @@
 
             <!-- FAQ Wi-Fi -->
             <div class="col-xl-6 col-sm-12 mb-5">
-                <h2 class="animateRight"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/wifi-icon.png" alt="WiFi Icon" class="me-2 mb-1">Wi-Fi FAQ</h2>
+                <h2 class="animateLeft"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/wifi-icon.png" alt="WiFi Icon" class="me-2 mb-1">Wi-Fi FAQ</h2>
                 <div class="accordion" id="accordionPanelsStayOpenWiFi">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -177,7 +177,7 @@
 
             <!-- FAQ Blackboard -->
             <div class="col-xl-6 col-sm-12 mb-5">
-                <h2 class="animateRight"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/blackboard-icon.png" alt="Person Icon" class="me-2 mb-1">Blackboard FAQ</h2>
+                <h2 class="animateRight"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/blackboard-icon.png" alt="Person Icon" class="me-2 mb-1">Blackboard FAQ</h2>
                 <div class="accordion" id="accordionPanelsStayOpenBlackboard">
                     <div class="accordion-item">
                         <h2 class="accordion-header">

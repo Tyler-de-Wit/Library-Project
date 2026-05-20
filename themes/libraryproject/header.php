@@ -71,5 +71,5 @@
     </nav>
 </header>
 
-<button id="scroll-to-top-button" title="Go to top"><i class="bi bi-arrow-up"></i></button>
+<button id="scroll-to-top-button" title="Go to top" class="scroll-to-top-button"><i class="bi bi-arrow-up"></i></button>
 <noscript>Your browser does not have JavaScript enabled. Some features of this site will not be available.</noscript>

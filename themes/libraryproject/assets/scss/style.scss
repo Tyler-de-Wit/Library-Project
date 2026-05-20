@@ -283,24 +283,173 @@ main {
     }
 }
 
-// Toggalable styles for light and dark mode buttons
-.light-mode {
-    background-color: variables.$white !important;
-    color: variables.$black !important;
-}
-
+// Styles for when darkmode is active which overwrite default lightmode behaviour
 .dark-mode {
     background-color: variables.$black !important;
     color: variables.$white !important;
 }
 
-.divs-light-mode-border {
-    border: 1px solid variables.$darkGray !important;
+.navbar-toggler-dark-mode {
+    background-color: #ffffff !important;
 }
 
-.divs-dark-mode-border {
-    border: 1px solid variables.$gray !important;
+.scroll-to-top-button-dark-mode {
+    background-color: variables.$white !important;
+    color: variables.$black !important;
+
+    &:hover {
+        background-color: variables.$secondary !important;
+
+        i {
+            background-color: variables.$secondary !important;
+        }
+    }
+
+    i {
+        background-color: variables.$white !important;
+        color: variables.$black !important;
+    }
 }
+
+.button-icon-navigation-dark-mode {
+    border: 1px solid variables.$white !important;
+    box-shadow: 0px 1px 4px 0px variables.$white !important;
+}
+
+.navbar-dark-mode {
+    box-shadow: 0px 1px 1px 0px variables.$white;
+}
+
+.chatbox-container-dark-mode {
+    border: 1px solid variables.$white;
+
+    .message {
+        
+        &:nth-child(odd) {
+            background-color: variables.$primary !important;
+        }
+        &:nth-child(even) {
+            background-color: variables.$secondary !important;
+        }
+        
+        .message-sender,
+        .message-text,
+        .message-timestamp {
+            color: variables.$black !important;
+            background-color: inherit !important;
+        }
+
+        a {
+            color: variables.$blue !important;
+            background-color: inherit !important;
+
+            &:hover {
+                color: variables.$black !important;
+            }
+        }
+    }
+
+    .chatbox-input-form {
+        border-top: 1px solid variables.$white;
+
+        .chatbox-input {
+            border: 1px solid variables.$white;
+            border-radius: 0px;
+        }
+    }
+
+    .button {
+        border: 1px solid variables.$white;
+    }
+}
+
+.contact-main-dark-mode {
+    .card {
+        border: 1px solid variables.$white !important;
+
+        .card-header {
+            border-bottom: 1px solid variables.$white !important;
+        }
+    }
+}
+
+.main-sitemap-page-dark-mode {
+    .internal-links,
+    .external-links,
+    .links-to-pdf-documents {
+        border: 1px solid variables.$white !important;
+        overflow: hidden !important;
+    }
+
+    .button-icon-navigation-dark-mode {
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .wp-block-file__button.wp-element-button {
+        box-shadow: 0px 0px 4px 1px variables.$white !important;
+    }
+}
+
+.archive-card-dark-mode {
+    border: 1px solid variables.$white !important;
+    overflow: hidden !important;
+
+    .card-header {
+        border-bottom: 1px solid variables.$white !important;
+    }
+
+    .btn {
+        box-shadow: 0px 0px 4px 1px variables.$white !important;
+        border: none !important;
+    }
+}
+
+.pagination-dark-mode {
+    .page-numbers {
+        border: 1px solid variables.$white !important;
+
+        &:hover {
+            color: variables.$secondary !important;
+        }
+    }
+}
+
+.article-main-dark-mode {
+    .article-header-title,
+    .article-header-updated-date {
+        background-color: initial !important;
+    }
+
+    h2 {
+        background-color: variables.$white !important;
+        color: variables.$black !important;
+    }
+
+    #article-table-of-contents {
+        a {
+            color: variables.$white !important;
+
+            &:hover {
+                color: variables.$secondary !important;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Styles for animation on scroll
 .fadeInLeft {
@@ -698,6 +847,7 @@ header {
 /* -------------------- Footer -------------------- */
 footer {
     background-color: variables.$darkBackground;
+    box-shadow: 0px 0px 3px 0px variables.$white;
 
     .row {
         border-bottom: 1px solid variables.$darkGray;
@@ -734,6 +884,12 @@ footer {
             border-radius: 4px;
             border: none;
             padding: 0.5rem;
+        }
+
+        .search-form-input,
+        .search-form-button {
+            background-color: variables.$white !important;
+            color: variables.$black !important;
         }
     }
 

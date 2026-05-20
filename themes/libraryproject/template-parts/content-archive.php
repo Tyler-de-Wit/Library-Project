@@ -1,5 +1,5 @@
 
-<div class="card">
+<div class="card archive-card">
 
     <div class="card-header">
 
