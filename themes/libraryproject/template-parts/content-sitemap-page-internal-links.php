@@ -7,23 +7,19 @@
 
 <div class="col">
 
-    <div class="text-center">
+    <a href="<?php the_permalink(); ?>">
 
-        <a href="<?php the_permalink(); ?>">
+        <?php
+            // Output the image from the media library using our custom function
+        
+            $image_url = get_image_url_from_slug( $current_posts_slug . '-icon' );
+            if ( $image_url ) {
+                echo '<img src="' . esc_url( $image_url ) . '" alt="' . $current_posts_slug . '-icon' . '" width="40" class="site-icon">';
+            } else {
+                echo '<img src="' . get_template_directory_uri() . '/assets/images/document-icon.png' . '" alt="Document Icon" width="40" class="site-icon">';
+            }
+        ?>
 
-            <?php
-                // Output the image from the media library using our custom function
-            
-                $image_url = get_image_url_from_slug( $current_posts_slug . '-icon' );
-                if ( $image_url ) {
-                    echo '<img src="' . esc_url( $image_url ) . '" alt="' . $current_posts_slug . '-icon' . '" width="40" class="site-icon">';
-                } else {
-                    echo '<img src="' . get_template_directory_uri() . '/assets/images/document-icon.png' . '" alt="Document Icon" width="40" class="site-icon">';
-                }
-            ?>
-
-        <?php the_title(); ?></a>
-
-    </div>
+    <?php the_title(); ?></a>
     
 </div>
