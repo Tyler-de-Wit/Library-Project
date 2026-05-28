@@ -4,13 +4,14 @@
         <!-- Quick Links -->
         <section class="col-12 col-lg-4 mt-3">
             <h2>Quick Links</h2>
-            <ul>
-                <li><a href="<?php echo get_home_url(); ?>">Home</a></li>
-                <li><a href="<?php echo get_home_url(); ?>/frequently-asked-questions">FAQ</a></li>
-                <li><a href="<?php echo get_home_url(); ?>/contact">Contact</a></li>
-                <li><a href="<?php echo get_home_url(); ?>/sitemap">Sitemap</a></li>
-                <li><a href="<?php echo get_home_url(); ?>/articles">Articles</a></li>
-            </ul>
+            <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'footer-quick-links-menu',
+                    'container'      => false,
+                    'menu_class'     => 'footer-quick-links-menu',
+                    'fallback_cb'    => false,
+                ));
+            ?>
         </section>
         <!-- Contacts -->
         <section class="col-12 col-lg-4 mt-3">
