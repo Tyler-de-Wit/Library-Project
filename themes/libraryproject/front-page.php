@@ -13,7 +13,7 @@
                 $args = array(
                     'posts_per_page' => -1,     // Overwrites the posts per page set in WordPress settings to allow all posts on one page
                     'post_type'      => 'post',
-                    'order'          => 'ASC',
+                    'order'          => 'DESC',
                     'orderby'        => 'date',
                 );
 
