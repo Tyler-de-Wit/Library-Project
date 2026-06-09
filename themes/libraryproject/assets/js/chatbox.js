@@ -1,3 +1,11 @@
+// Import page data from JSON file
+import chatboxPages from './chatbox-pages.json' with { type: 'json' };
+
+
+// User hints message
+const userHintsMessage = 'Hello, you can use this chatbox to search through all the information on this site. You can try searching for things like "How do I setup Microsoft 365", "How can I connect to the campus Wi-Fi", "What is my default password", "How do I log into Blackboard" among many others.';
+
+
 // Create object for chat messages
 const chatMessagesObject = {
     sender: [],
@@ -7,30 +15,29 @@ const chatMessagesObject = {
 
 
 // Use session storage to fill the chatbox conversation saved from other pages on the site
-function fillPreviousConversation( conversationObject ) {
+function fillPreviousConversation(conversationObject) {
     'use strict';
 
     // Loop through arrays in conversationObject and run outputMessage function to display stored messages in the chatbox
-    for ( let i = 0; i < conversationObject.message.length; i++ ) {
-        outputMessage( conversationObject.sender[i], conversationObject.message[i], conversationObject.time[i] );
+    for (let i = 0; i < conversationObject.message.length; i++) {
+        outputMessage(conversationObject.sender[i], conversationObject.message[i], conversationObject.time[i]);
     }
 }
 
 
-// Handle the message that the user typed in
-function receiveMessage( event ) {
+// Get the users Input
+function getUserInput() {
     'use strict';
+
+    return document.querySelector('.chatbox-input').value;
+}
+
+
+// Handle the message that the user typed in
+function receiveMessage(event) {
+    'use strict';
+
     event.preventDefault();
-
-    // Get user input from the form
-    let userInput = document.querySelector( '.chatbox-input' ).value;
-
-    // Check if user entered any text before running functions
-    if ( userInput !== '' ) {
-        // Run functions to output the user message and then generate a response
-        outputMessage( 'You', userInput, getTime() );
-        createAutomatedResponse();
-    }
 }
 
 
@@ -39,99 +46,37 @@ function createAutomatedResponse() {
     'use strict';
 
     // Get user input from last element of chatMessagesObject message array
-    let userInput = chatMessagesObject.message.at( -1 );
+    let userInput = chatMessagesObject.message.at(-1);
     userInput = userInput.toLowerCase();
+    let automatedMessage = "";
 
-    // Test userInput for keywords so a response can be made and output
-    // Microsoft Setup
-    if ( userInput.includes( 'microsoft' ) || userInput.includes( 'authenticator' ) ) { 
-        let automatedMessage = 'You should visit our <a href="microsoft-365">Microsoft Setup</a> page to learn more';
-        outputMessage( 'Library', automatedMessage, getTime() );
+    // Loop through all pages in the Object
+    for (const [pageId, pageData] of Object.entries(chatboxPages)) {
+
+        // Loop though each page's keywords in the array
+        for (let i = 0; i < pageData.queries.length; i++) {
+
+            // Test userInput for keywords so a response can be made and output
+            if (userInput.includes(pageData.queries[i])) {
+
+                if (pageId === "other" && automatedMessage === "") { // If all pages are searched and none matched then set fallback message
+                    automatedMessage = "Sorry, We can't seem to find a page that matches your query. You can try visiting our <a href='sitemap'>Sitemap</a> page for a full list of pages on this website.";
+                } else if (pageId === "other") { // If some pages matched query then also add the sitemap page to end of message
+                    automatedMessage += `Also you could take a look at our <a href="${pageData.pageLink}">${pageData.pageTitle}</a> page for a full list of pages and information available on this site.<br>`;
+                    break;
+                } else { // Append all pages to output message that match the query
+                    automatedMessage += `You should visit our <a href="${pageData.pageLink}">${pageData.pageTitle}</a> page to learn more.<br>`;
+                }
+            }
+        }
     }
-    // Access Blackboard
-    else if( userInput.includes( 'blackboard' ) ) { 
-        let automatedMessage = 'You should visit our <a href="blackboard">Access Blackboard</a> page to learn more';
-        outputMessage( 'Library', automatedMessage, getTime() );
-    }
-    // Login To Wifi
-    else if( userInput.includes( 'wifi' ) || userInput.includes( 'wi-fi' ) ) { 
-        let automatedMessage = 'You should visit our <a href="wifi">Login To WIFI</a> page to learn more';
-        outputMessage( 'Library', automatedMessage, getTime() );
-    }
-    // AMEP
-    else if( userInput.includes( 'amep' ) || userInput.includes( 'english' ) ) { 
-        let automatedMessage = 'You should visit our <a href="amep">AMEP</a> page to learn more';
-        outputMessage( 'Library', automatedMessage, getTime() );
-    }
-    // Library Printers
-    else if( userInput.includes( 'printers' ) ) { 
-        let automatedMessage = 'You should visit our <a href="printers">Library Printers</a> page to learn more';
-        outputMessage( 'Library', automatedMessage, getTime() );
-    }
-    // Password Help
-    else if( userInput.includes( 'password' ) ) { 
-        let automatedMessage = 'You should visit our <a href="passwords">Password Help</a> page to learn more';
-        outputMessage( 'Library', automatedMessage, getTime() );
-    }
-    // Locating Timetable
-    else if( userInput.includes( 'timetable' ) ) { 
-        let automatedMessage = 'You should visit our <a href="timetable">Locating Timetable</a> page to learn more';
-        outputMessage( 'Library', automatedMessage, getTime() );
-    }
-    // Student Card
-    else if( userInput.includes( 'card' ) ) { 
-        let automatedMessage = 'You should visit our <a href="student-id-card">Student Card</a> page to learn more';
-        outputMessage( 'Library', automatedMessage, getTime() );
-    }
-    // Smart Rider
-    else if( userInput.includes( 'discount' ) || userInput.includes( 'smartrider' ) || userInput.includes( 'smart rider' ) || userInput.includes( 'transperth' ) ) { 
-        let automatedMessage = 'You should visit our <a href="smart-rider">Smart Rider</a> page to learn more';
-        outputMessage( 'Library', automatedMessage, getTime() );
-    }
-    // Library Study Rooms
-    else if( userInput.includes( 'study' ) ) { 
-        let automatedMessage = 'You should visit our <a href="book-a-study-room">Library Study Rooms</a> page to learn more';
-        outputMessage( 'Library', automatedMessage, getTime() );
-    }
-    // Disability Support
-    else if( userInput.includes( 'disability' ) ) { 
-        let automatedMessage = 'You should visit our <a href="disability-support">Disability Support</a> page to learn more';
-        outputMessage( 'Library', automatedMessage, getTime() );
-    }
-    // Jobs And Skills Centre
-    else if( userInput.includes( 'jobs' ) || userInput.includes( 'skills' ) ) { 
-        let automatedMessage = 'You should visit our <a href="jobs-and-skills-centre">Jobs And Skills Centre</a> page to learn more';
-        outputMessage( 'Library', automatedMessage, getTime() );
-    }
-    // Frequently Asked Questions
-    else if( userInput.includes( 'faq' ) || userInput.includes( 'frequently' ) || userInput.includes( 'question' ) ) { 
-        let automatedMessage = 'You should visit our <a href="frequently-asked-questions">Frequently Asked Questions</a> page to learn more';
-        outputMessage( 'Library', automatedMessage, getTime() );
-    }
-    // Contact Us
-    else if( userInput.includes( 'contact' ) || userInput.includes( 'help' ) ) { 
-        let automatedMessage = 'You should visit our <a href="contact">Contact</a> page to learn more';
-        outputMessage( 'Library', automatedMessage, getTime() );
-    }
-    // Sitemap
-    else if( userInput.includes( 'sitemap' ) ) { 
-        let automatedMessage = 'You should visit our <a href="sitemap">Sitemap</a> page to learn more';
-        outputMessage( 'Library', automatedMessage, getTime() );
-    }
-    // Articles
-    else if( userInput.includes( 'articles' ) || userInput.includes( 'posts' ) ) { 
-        let automatedMessage = 'You should visit our <a href="articles">Articles</a> page to learn more';
-        outputMessage( 'Library', automatedMessage, getTime() );
-    }
-    else {
-        let automatedMessage = "Sorry, We can't seem to find a page that matches your query. You can try visiting our <a href='sitemap'>Sitemap</a> page to look for the page you are after";
-        outputMessage( 'Library', automatedMessage, getTime() );
-    }
+
+    outputMessage('Library', automatedMessage, getTime());
 }
 
 
 // Output messages to the chatbox
-function outputMessage( messageSender, messageText, messageTime ) {
+function outputMessage(messageSender, messageText, messageTime) {
     'use strict';
 
     // Set the message to be output
@@ -144,22 +89,22 @@ function outputMessage( messageSender, messageText, messageTime ) {
     `;
 
     // Push message information to object
-    chatMessagesObject.sender.push( messageSender );
-    chatMessagesObject.message.push( messageText );
-    chatMessagesObject.time.push( messageTime );
+    chatMessagesObject.sender.push(messageSender);
+    chatMessagesObject.message.push(messageText);
+    chatMessagesObject.time.push(messageTime);
 
     // Convert object to JSON string and store it in session variable for use across pages
-    const chatMessagesObjectToString = JSON.stringify( chatMessagesObject );
-    sessionStorage.setItem( "conversation", chatMessagesObjectToString );
+    const chatMessagesObjectToString = JSON.stringify(chatMessagesObject);
+    sessionStorage.setItem("conversation", chatMessagesObjectToString);
 
     // Output the message inside of html tags into the chatbox
-    document.querySelector( '.chatbox-messages' ).innerHTML += messageOutput;
+    document.querySelector('.chatbox-messages').innerHTML += messageOutput;
 
     // Scroll to bottom of the chats so user can see the most recent ones
-    document.querySelector( '.chatbox-messages' ).scrollTop = document.querySelector( '.chatbox-messages' ).scrollHeight;
+    document.querySelector('.chatbox-messages').scrollTop = document.querySelector('.chatbox-messages').scrollHeight;
 
     // Empty input field
-    document.querySelector( '.chatbox-input' ).value = '';
+    document.querySelector('.chatbox-input').value = '';
 }
 
 
@@ -168,24 +113,27 @@ function clearChat() {
     'use strict';
 
     // Remove all entries from chatMessagesObject arrays
-    while ( chatMessagesObject.sender.length > 0 ) {
+    while (chatMessagesObject.sender.length > 0) {
         chatMessagesObject.sender.pop();
     }
-    while ( chatMessagesObject.message.length > 0 ) {
+    while (chatMessagesObject.message.length > 0) {
         chatMessagesObject.message.pop();
     }
-    while ( chatMessagesObject.time.length > 0 ) {
+    while (chatMessagesObject.time.length > 0) {
         chatMessagesObject.time.pop();
     }
 
     // Remove all messages from html chatbox
-    document.querySelector( '.chatbox-messages' ).innerHTML = '';
+    document.querySelector('.chatbox-messages').innerHTML = '';
 
     // Empty input field
-    document.querySelector( '.chatbox-input' ).value = '';
+    document.querySelector('.chatbox-input').value = '';
 
     // Clear session variable
-    sessionStorage.removeItem( 'conversation' );
+    sessionStorage.removeItem('conversation');
+
+    // Output hints for the user to start the conversation
+    outputMessage('Library', userHintsMessage, getTime());
 }
 
 
@@ -208,22 +156,40 @@ function getTime() {
 function init() {
     'use strict';
 
-    try {
-        // Runs receiveMessage function when form is submitted
-        document.getElementById( 'chatbox-form' ).addEventListener( 'submit', receiveMessage );
-    
-        // Runs clearChat function when button is clicked
-        document.querySelector( '.clear-chat-button' ).addEventListener( 'click', clearChat );
-    } catch( error ) {
-        console.log( error );
+    const sessionConversationString = sessionStorage.getItem('conversation');
+    const sessionConversationObject = JSON.parse(sessionConversationString);
+
+    // Output hints for the user if there is no previous conversation so that the hints will be first in the conversation
+    if (sessionConversationObject === null) {
+        outputMessage('Library', userHintsMessage, getTime());
     }
     
-
     // Runs fillPreviousConversation if previous conversation is stored in session varaible
-    const sessionConversationString = sessionStorage.getItem( 'conversation' );
-    const sessionConversationObject = JSON.parse( sessionConversationString );
-    if ( sessionConversationObject !== null ) {
-        fillPreviousConversation( sessionConversationObject );
+    if (sessionConversationObject !== null) {
+        fillPreviousConversation(sessionConversationObject);
+    }
+
+    try {
+        // Scroll to bottom of the chats when chatbox is opened so user can see the most recent ones
+        document.getElementById('right-menu-toggler').addEventListener('click', () => {
+            document.querySelector('.chatbox-messages').scrollTop = document.querySelector('.chatbox-messages').scrollHeight;
+        });
+
+        // Check for input submission and then run message processing functions
+        document.getElementById('chatbox-form').addEventListener('submit', (event) => {
+            receiveMessage(event);
+
+            // Run functions to output the user message and then generate a response
+            if (getUserInput() !== '' && getUserInput().length > 2 && getUserInput().length < 200 ) {
+                outputMessage('You', getUserInput(), getTime());
+                createAutomatedResponse();
+            }
+        });
+
+        // Runs clearChat function when button is clicked
+        document.querySelector('.clear-chat-button').addEventListener('click', clearChat);
+    } catch (error) {
+        console.log(error);
     }
 }
 

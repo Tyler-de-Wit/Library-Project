@@ -23,6 +23,14 @@
                 <?php
             }
         }
+
+        if(!have_posts()) {
+            ?>
+
+            <p class="text-center fs-5">Sorry, your query didn't match any pages. Try visiting our <a href="<?php echo get_home_url(); ?>/sitemap">Sitemap</a> to find the page you are looking for.</p>
+
+            <?php
+        }
         ?>
 
     </div>

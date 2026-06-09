@@ -1,7 +1,7 @@
 
 <div class="chatbox-container">
     
-    <h3 class="chatbox-header">Chat Box</h3>
+    <p class="chatbox-header">Chat Box</p>
 
     <div class="chatbox-messages">
 
@@ -9,12 +9,23 @@
 
     <form class="chatbox-input-form" id="chatbox-form">
 
-        <input type="text" class="chatbox-input" placeholder="What are you looking for?">
+        <label for="chatbox-text-input" class="fw-bold">Message:</label>
+        <input type="text" class="chatbox-input" id="chatbox-text-input" placeholder="What are you looking for?">
 
         <button type="submit" class="button send-button">Send</button>
 
     </form>
 
-    <button class="button clear-chat-button">Clear Chat</button>
+    <p class="m-0">Note: Your message must be between 2 and 200 characters.</p>
+
+    <div class="chatbox-buttons">
+
+        <button class="button clear-chat-button">Clear Chat</button>
+    
+        <button class="button close-chatbox-button" type="button" data-bs-toggle="collapse" data-bs-target="#rightMenu" aria-controls="rightMenu" aria-expanded="false" aria-label="Toggle navigation">
+            Close Chat Box
+        </button>
+
+    </div>
 
 </div>

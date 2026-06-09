@@ -4,20 +4,22 @@
         <!-- Quick Links -->
         <section class="col-12 col-lg-4 mt-3">
             <h2>Quick Links</h2>
-            <ul>
-                <li><a href="<?php echo get_home_url(); ?>">Home</a></li>
-                <li><a href="frequently-asked-questions">FAQ</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li><a href="sitemap">Sitemap</a></li>
-            </ul>
+            <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'footer-quick-links-menu',
+                    'container'      => false,
+                    'menu_class'     => 'footer-quick-links-menu',
+                    'fallback_cb'    => false,
+                ));
+            ?>
         </section>
         <!-- Contacts -->
         <section class="col-12 col-lg-4 mt-3">
             <h2>Contacts</h2>
             <ul>
-                <li><i class="bi bi-envelope me-2"></i>Email: library@tafe.wa.edu.au</li>
-                <li><i class="bi bi-telephone me-2"></i>Phone: 1300 300 822</li>
-                <li><i class="bi bi-geo-alt me-2"></i>Location: 25 Aberdeen St, Perth WA 6000</li>
+                <li><i class="bi bi-envelope me-2"></i>Email: <a href="mailto:library@tafe.wa.edu.au">library@tafe.wa.edu.au</a></li>
+                <li><i class="bi bi-telephone me-2"></i>Phone: <a href="tel:1300 300 822">1300 300 822</a></li>
+                <li><i class="bi bi-geo-alt me-2"></i>Location: <a href="https://www.google.com/maps/place/25+Aberdeen+St,+Perth+WA+6000/@-31.9473017,115.8587275,17z/data=!3m1!4b1!4m6!3m5!1s0x2a32bad0ff8118e1:0xc7cd20e43cdd3ed8!8m2!3d-31.9473063!4d115.8613024!16s%2Fg%2F12hxml0_c?entry=ttu&g_ep=EgoyMDI2MDQyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">25 Aberdeen St, Perth WA 6000</a></li>
             </ul>
         </section>
     </div>
@@ -41,20 +43,13 @@
             <div class="row">
                 <button class="btn btn-contrast col-4" type="button" id="light-mode-button">Light Mode</button>
                 <button class="btn btn-contrast col-4" type="button" id="dark-mode-button">Dark Mode</button>
-                <button class="btn btn-contrast col-4" type="button" id="decrease-contrast-button">Reset Contrast</button>
-            </div>
-
-            <!-- Border Buttons -->
-            <div class="row">
-                <button class="btn btn-borders col-4" type="button" id="add-borders-button">Add Borders</button>
-                <div class="col-4"></div>
-                <button class="btn btn-borders col-4" type="button" id="remove-borders-button">Remove Borders</button>
+                <button class="btn btn-reset col-4" type="button" id="reset-all-button">Reset All</button>
             </div>
         </section>
     </div>
     <!-- Copyright Statement -->
     <div class="mt-3 p-2">
-        <p class="text-center">Copyright 2025 Library Project Team, All Rights Reserved.</p>
+        <p class="text-center">Copyright <?php echo date("Y"); ?> Library Project Team, All Rights Reserved.</p>
     </div>
 </footer>
     

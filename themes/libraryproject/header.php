@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-au">
 <head>
+
+    <!-- 
+        If You Are Reading This "Hello"
+        This Site Was Made By https://tylerdewit.com/
+    -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?php echo get_the_title() . ' | North Metropolitan Tafe Library'; ?>
+        <?php 
+            $title = single_post_title('', false);
+
+            if($title == null) {
+                echo 'Queried Posts | North Metropolitan Tafe Library';
+            } else {
+                echo $title . ' | North Metropolitan Tafe Library';
+            }
+        ?>
     </title>
 
     <?php
@@ -32,7 +46,7 @@
         <a class="navbar-brand fw-bold text-center" href="<?php echo home_url(); ?>">NMT Library</a>
 
         <!-- Right Toggler -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#rightMenu" aria-controls="rightMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#rightMenu" aria-controls="rightMenu" aria-expanded="false" aria-label="Toggle navigation" id="right-menu-toggler">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/search-icon.png" alt="Search Icon" width="50">
         </button>
 
@@ -63,5 +77,5 @@
     </nav>
 </header>
 
-<button id="scroll-to-top-button" title="Go to top"><i class="bi bi-arrow-up"></i></button>
+<button id="scroll-to-top-button" title="Go to top" class="scroll-to-top-button"><i class="bi bi-arrow-up"></i></button>
 <noscript>Your browser does not have JavaScript enabled. Some features of this site will not be available.</noscript>

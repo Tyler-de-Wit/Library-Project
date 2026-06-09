@@ -24,8 +24,8 @@ add_action('wp_enqueue_scripts', 'add_theme_style');
 function add_theme_script() {
   
     wp_enqueue_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js', array(), '1.0', true);
-    wp_enqueue_script('chatbox', get_template_directory_uri() . '/assets/js/chatbox.js', array(), '1.0', true);
-    wp_enqueue_script('scripts', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0', true);
+    wp_enqueue_script_module('chatbox', get_template_directory_uri() . '/assets/js/chatbox.js', array(), '1.0', array('in_footer' => true));
+    wp_enqueue_script_module('scripts', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0', array('in_footer' => true));
 }
 add_action('wp_enqueue_scripts', 'add_theme_script');
 
@@ -187,3 +187,27 @@ function add_class_to_menu_anchor_tags($atts, $item, $args) {
     return $atts;
 }
 add_filter('nav_menu_link_attributes', 'add_class_to_menu_anchor_tags', 10, 3);
+
+// Add unique id to each heading on the page for table of contents
+function auto_id_headings( $content ) {
+    $content = preg_replace_callback( '/(\<h[1-6](.*?))\>(.*)(<\/h[1-6]>)/i', function( $matches ) {
+        if ( ! stripos( $matches[0], 'id=' ) ) :
+            $matches[0] = $matches[1] . ' id="' . sanitize_title( $matches[3] ) . '">' . $matches[3] . $matches[4];
+        endif;
+        return $matches[0];
+    }, $content );
+    return $content;
+}
+add_filter( 'the_content', 'auto_id_headings' );
+
+// Reduce the amount of words returned in the posts excerpt
+function custom_excerpt_length( $length ) {
+    return 35;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+// Change the "..." that appears when an excerpt it cut off
+function custom_excerpt_more( $more ) {
+    return '...';
+}
+add_filter( 'excerpt_more', 'custom_excerpt_more' );

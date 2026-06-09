@@ -12,6 +12,17 @@ for (let i = 0; i < htmlElements.length; i++) {
     elements.push(selector);
 }
 
+// Array with the class names of the elements which will get their own custom dark mode class added
+const darkModeElements = ['navbar', 'navbar-toggler', 'chatbox-container', 'scroll-to-top-button', 'button-icon-navigation', 'search-form-input', 'search-form-button', 'contact-main', 'main-sitemap-page', 'archive-card', 'pagination', 'article-main'];
+    
+// Build array for dark mode custom classes
+const queriedElementsArray = [];
+for (let i = 0; i < darkModeElements.length; i++) {
+    let selector = '.' + darkModeElements[i];
+    let queriedElements = document.querySelectorAll(selector);
+    queriedElementsArray.push(queriedElements);
+}
+
 // Test if fontSize has been set already in the session as to not override it from another page if it has not been set then set the session variable to 16 and apply it to the page
 const sessionKeyFontSize = sessionStorage.getItem("fontSize");
 if (sessionKeyFontSize === null) {
@@ -25,7 +36,7 @@ if (sessionKeyFontSize === null) {
 
 // Function to increase root font size
 function increaseFontSize() {
-    'use strict'
+    'use strict';
 
     let fontSize = sessionStorage.getItem("fontSize");
     fontSize = Number(fontSize);
@@ -39,7 +50,7 @@ function increaseFontSize() {
 
 // Function to decrease root font size
 function decreaseFontSize() {
-    'use strict'
+    'use strict';
 
     let fontSize = sessionStorage.getItem("fontSize");
     fontSize = Number(fontSize);
@@ -53,32 +64,38 @@ function decreaseFontSize() {
 
 // Function to reset root font size
 function resetFontSize() {
-    'use strict'
+    'use strict';
 
     sessionStorage.setItem("fontSize", "16");
     rootElement.style.fontSize = "16px";
 }
 
 
-// Function to increase contrast to light mode
+// Function to reset contrast to light mode
 function lightMode() {
-    'use strict'
+    'use strict';
 
     // Set sesion variable to keep state between pages
     sessionStorage.setItem("contrast", "light");
 
-    // Add light mode class to all elements in page
+    // Remove dark-mode class to all elements in page
     for (let x = 0; x < elements.length; x++) {
         for (let i = 0; i < elements[x].length; i++) {
             elements[x][i].classList.remove('dark-mode');
-            elements[x][i].classList.add('light-mode');
+        }
+    }
+
+    // Remove custom element dark mode class from each element
+    for (let x = 0; x < queriedElementsArray.length; x++) {
+        for (let i = 0; i < queriedElementsArray[x].length; i++) {
+            queriedElementsArray[x][i].classList.remove(darkModeElements[x] + '-dark-mode');
         }
     }
 }
 
-// Function to increase contrast to dark mode
+// Function to change contrast to dark mode
 function darkMode() {
-    'use strict'
+    'use strict';
 
     // Set sesion variable to keep state between pages
     sessionStorage.setItem("contrast", "dark");
@@ -86,88 +103,43 @@ function darkMode() {
     // Add dark mode class to all elements in page
     for (let x = 0; x < elements.length; x++) {
         for (let i = 0; i < elements[x].length; i++) {
-            elements[x][i].classList.remove('light-mode');
             elements[x][i].classList.add('dark-mode');
         }
     }
 
-    // Change background of hanburger and search buttons back to white so you can see the dark image
-    let navbarTogglers = [];
-    navbarTogglers = document.querySelectorAll('.navbar-toggler');
-    for (let i = 0; i < navbarTogglers.length; i++) {
-        navbarTogglers[i].style.setProperty('background-color', '#ffffff', 'important');
+    // Add custom element dark mode class from each element
+    for (let x = 0; x < queriedElementsArray.length; x++) {
+        for (let i = 0; i < queriedElementsArray[x].length; i++) {
+            queriedElementsArray[x][i].classList.add(darkModeElements[x] + '-dark-mode');
+        }
     }
 }
 
-// Function to reset colour contrast to defaults
-function resetContrast() {
-    'use strict'
 
+// Function to reset all accessibility settings
+function resetAccessibilitySettings() {
+    'use strict';
+
+    // Reset font size
+    sessionStorage.setItem("fontSize", "16");
+    rootElement.style.fontSize = "16px";
+
+    // Reset contrast
     // Set sesion variable to keep state between pages
     sessionStorage.setItem("contrast", "reset");
 
-    // Remove high contrast class to all elements in page
+    // Remove dark-mode class to all elements in page
     for (let x = 0; x < elements.length; x++) {
         for (let i = 0; i < elements[x].length; i++) {
-            elements[x][i].classList.remove('light-mode');
             elements[x][i].classList.remove('dark-mode');
         }
     }
-}
 
-
-// Function to add borders to all divs
-function addBorders() {
-    'use strict'
-
-    // Set sesion variable to keep state between pages
-    sessionStorage.setItem("borders", "add");
-
-    // Add contrast border class to all divs and sections on the page
-    const divs = document.querySelectorAll('div');
-    for (let i = 0; i < divs.length; i++) {
-        
-        // Test if the page is in light or dark mode to add the correct border
-        if (sessionStorage.getItem("contrast") == "light") {
-            divs[i].classList.add('divs-light-mode-border');
-        } else if (sessionStorage.getItem("contrast") == "dark") {
-            divs[i].classList.add('divs-dark-mode-border');
-        } else {
-            divs[i].classList.add('divs-light-mode-border');
+    // Remove custom element dark mode class from each element
+    for (let x = 0; x < queriedElementsArray.length; x++) {
+        for (let i = 0; i < queriedElementsArray[x].length; i++) {
+            queriedElementsArray[x][i].classList.remove(darkModeElements[x] + '-dark-mode');
         }
-    }
-
-    const sections = document.querySelectorAll('section');
-    for (let i = 0; i < sections.length; i++) {
-        // Test if the page is in light or dark mode to add the correct border
-        if (sessionStorage.getItem("contrast") == "light") {
-            sections[i].classList.add('divs-light-mode-border');
-        } else if (sessionStorage.getItem("contrast") == "dark") {
-            sections[i].classList.add('divs-dark-mode-border');
-        } else {
-            sections[i].classList.add('divs-light-mode-border');
-        }
-    }
-}
-
-// Function to remove borders from all divs
-function removeBorders() {
-    'use strict';
-
-    // Set sesion variable to keep state between pages
-    sessionStorage.setItem("borders", "remove");
-
-    // Remove contrast border class to all divs on the page
-    const divs = document.querySelectorAll('div');
-    for (let i = 0; i < divs.length; i++) {
-        divs[i].classList.remove('divs-light-mode-border');
-        divs[i].classList.remove('divs-dark-mode-border');
-    }
-    
-    const sections = document.querySelectorAll('section');
-    for (let i = 0; i < sections.length; i++) {        
-        sections[i].classList.remove('divs-light-mode-border');
-        sections[i].classList.remove('divs-dark-mode-border');
     }
 }
 
@@ -248,7 +220,7 @@ const observerRight = new IntersectionObserver((entries) => {
     threshold: 0.5
 });
 targetElementsRight.forEach(element => {
-    observerRight.observe(element); 
+    observerRight.observe(element);
 });
 
 // When an element with the class ".animateTop" is within the viewport the class ".fadeInTop" is added
@@ -268,18 +240,46 @@ targetElementsTop.forEach(element => {
 });
 
 
+// -------------------- Generate Table Of Contents -------------------- //
+// Automatically generates a table of contents from the heading elemnts on the page
+function generateTableOfContents() {
+    'use strict';
+
+    // Get the id's for each heading element into an array
+    let headingElementsIds = [];
+    document.querySelectorAll('.wp-block-heading').forEach((heading) => {
+        headingElementsIds.push(heading.id);
+    });
+
+    // Get the values for each heading element into an array
+    let headingElementsValues = [];
+    document.querySelectorAll('.wp-block-heading').forEach((heading) => {
+        headingElementsValues.push(heading.innerHTML);
+    });
+
+    // Create table of contents output
+    let output = "";
+    for (let i = 0; i < headingElementsIds.length; i++) {
+        output += `<li><a href="#${headingElementsIds[i]}">${headingElementsValues[i]}</a></li>`;
+    }
+    output = `<ul>${output}</ul>`;
+
+    return output;
+}
+
+
 // -------------------- Event Listeners and Default Behaviour -------------------- //
 function init() {
     'use strict';
-    
+
     // -------------------- Scroll to top of page -------------------- //
     // Showing and hiding scroll to top button based on users scroll position
     let scrollToTopButton = document.getElementById("scroll-to-top-button");
-    
+
     // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {showScrollButton()};
-    
-    function showScrollButton() {        
+    window.onscroll = function () { showScrollButton(); };
+
+    function showScrollButton() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             scrollToTopButton.style.display = "block";
         } else {
@@ -297,14 +297,11 @@ function init() {
         lightMode();
     } else if (sessionStorage.getItem("contrast") == "dark") {
         darkMode();
-    } else if (sessionStorage.getItem("contrast") == "reset") {
-        resetContrast();
     }
 
     // Change contrast buttons
     document.getElementById('light-mode-button').addEventListener('click', lightMode);
     document.getElementById('dark-mode-button').addEventListener('click', darkMode);
-    document.getElementById('decrease-contrast-button').addEventListener('click', resetContrast);
 
     // Set the font size for a new page based on the value set in the session variable from a previous page
     const sessionKeyFontSize = sessionStorage.getItem("fontSize");
@@ -319,18 +316,9 @@ function init() {
     document.getElementById('decrease-font-size-button').addEventListener('click', decreaseFontSize);
     document.getElementById('reset-font-size-button').addEventListener('click', resetFontSize);
 
+    // Reset all accessibility settings
+    document.getElementById('reset-all-button').addEventListener('click', resetAccessibilitySettings);
 
-    // Run add or remove border functions based on state of session varaible
-    if (sessionStorage.getItem("borders") == "add") {
-        addBorders();
-    } else if (sessionStorage.getItem("borders") == "remove") {
-        removeBorders();
-    }
-
-    // Change border buttons
-    document.getElementById('add-borders-button').addEventListener('click', addBorders);
-    document.getElementById('remove-borders-button').addEventListener('click', removeBorders);
-    
 
     // -------------------- Show More Elements -------------------- //
     // Error handle event listeners to prevent an error being thrown if that element does not appear on the page
@@ -341,6 +329,15 @@ function init() {
         document.querySelector('.show-less-button').addEventListener('click', showLess);
 
     } catch (error) {
+        // console.log(error);
+    }
+
+    // -------------------- Generate Table Of Contents -------------------- //
+    try {
+        // Output table of contents into HTML
+        document.getElementById('article-table-of-contents').innerHTML = generateTableOfContents();
+    } catch (error) {
+        // Error will be thrown when not on an article page as the div of id 'article-table-of-contents' will not exist
         // console.log(error);
     }
 }
